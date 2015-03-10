@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%=  flash.now[:errors] %>
+
+<% if logged_in? %>
+<%= "Hello #{current_user.email}" %>
+<%= button_to 'Sign Out', session_url, method: :delete %>
+<% end %>
+
   <title>LsFinalproject</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
