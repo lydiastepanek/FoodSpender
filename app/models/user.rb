@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true
-  validates :first_name, :last_name, presence: true
+  validates :email, :first_name, :last_name, presence: true
   attr_reader :password
   before_validation :ensure_session_token
   validates :password, length: {minimum: 6, allow_nil: true}
+
+  has_many(
+    :posts,
+    class_name: "Post",
+    foreign_key: :owner_id,
+    primary_key: :id
+  )
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
