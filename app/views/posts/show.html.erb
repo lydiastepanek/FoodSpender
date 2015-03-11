@@ -6,3 +6,13 @@
 <li><%= @post.price %></li>
 <li><%= @post.num_meals %></li>
 <li><%= @post.image_url %></li>
+
+<br>
+Comments:
+<div>
+<% @post.comments.each do |comment| %>
+<li><%= comment.content %><br></li>
+<% end %>
+</div>
+
+<a href="/posts/<%= @post.id %>/comments/new">Add Comment</a>

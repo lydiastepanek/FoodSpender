@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :redirect_if_not_logged_in
 
   def new
     render :new
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_url
     else
+      flash.now[:errors] = @post.errors.full_messages
       render :new
     end
   end
@@ -24,6 +26,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
   end
 
   private
