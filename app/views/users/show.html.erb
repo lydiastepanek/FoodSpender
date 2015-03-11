@@ -1,0 +1,23 @@
+<br>
+<a href="<%= users_url%>">All Users</a><br>
+<br>
+
+<h1>User</h1>
+
+<%= @user.email %><br>
+<%= @user.first_name %> <%= @user.last_name %><br>
+
+<h2>User Posts</h2>
+
+
+<% @user.posts.each do |post| %>
+<ul>
+  <li><%= post.description %></li>
+  <li><%= post.score_id %></li>
+  <li><%= post.location %></li>
+  <li><%= post.food_type.title %></li>
+  <li><%= post.price %></li>
+  <li><%= post.num_meals %></li>
+  <li><%= post.image_url %></li>
+</ul>
+<% end  %>

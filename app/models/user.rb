@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_reader :password
   before_validation :ensure_session_token
   validates :password, length: {minimum: 6, allow_nil: true}
+  validates :email, uniqueness: true
 
   has_many(
     :posts,

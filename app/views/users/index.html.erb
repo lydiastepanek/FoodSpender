@@ -1,5 +1,18 @@
 <h1>Users</h1>
 
 <% @users.each do |user| %>
-<%= user.email %><br>
+<a href="<%= user_url(user)%>"><%= user.email %></a><br>
+
+  <% user.posts.each do |post| %>
+  <ul>
+    <li><%= post.description %></li>
+    <li><%= post.score_id %></li>
+    <li><%= post.location %></li>
+    <li><%= post.food_type.title %></li>
+    <li><%= post.price %></li>
+    <li><%= post.num_meals %></li>
+    <li><%= post.image_url %></li>
+  </ul>
+  <% end  %>
+
 <% end %>

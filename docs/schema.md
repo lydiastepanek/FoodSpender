@@ -12,17 +12,13 @@ price       | float     | not null
 num_meals   | integer   |
 image_url   | string    |
 description | string    |
-
-## score
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-description | string    | not null
+created_at  | datetime
+updated_at  | datetime
 
 ## friends
 column name | data type | details
 ------------|-----------|-----------------------
-user_id          | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key (references users)
 friend_id   | integer   | not null, foreign key (references users)
 
 ## food types

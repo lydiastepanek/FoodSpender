@@ -2,6 +2,8 @@
 
 
 <form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
 
   <label for="email">Email</label>
   <input id="email" type="text" name="user[email]">
@@ -10,11 +12,13 @@
   <input id="password" type="password" name="user[password]">
   <br>
 
-  <label for="firstname">Name</label>
+  <label for="firstname">First Name</label>
   <input id="firstname" type="text" name="user[first_name]">
 
+  <label for="lastname">Last Name</label>
   <input id="lastname" type="text" name="user[last_name]">
 
+  <br>
   <button>Submit</button>
 
 </form>

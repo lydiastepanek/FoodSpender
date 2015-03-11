@@ -11,20 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310195645) do
+ActiveRecord::Schema.define(version: 20150311180154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: true do |t|
+    t.integer "post_id",  null: false
+    t.string  "content",  null: false
+    t.integer "owner_id"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+
+  create_table "foodtypes", force: true do |t|
+    t.string "title"
+  end
+
   create_table "posts", force: true do |t|
-    t.integer "owner_id",    null: false
-    t.integer "score_id",    null: false
-    t.string  "location"
-    t.integer "food_id",     null: false
-    t.float   "price",       null: false
-    t.integer "num_meals"
-    t.string  "image_url"
-    t.string  "description"
+    t.integer  "owner_id",    null: false
+    t.string   "location"
+    t.integer  "food_id",     null: false
+    t.float    "price",       null: false
+    t.integer  "num_meals"
+    t.string   "image_url"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "score_id"
   end
 
   create_table "users", force: true do |t|
