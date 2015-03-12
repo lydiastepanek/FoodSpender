@@ -1,6 +1,12 @@
 LsFinalproject.Views.PostsIndex = Backbone.View.extend({
   template: JST['postindex'],
 
+  events: {
+    'click #like-button': 'likePost',
+    'click #comment-button': 'commentPost',
+    'click #uncomment-button': 'uncommentPost'
+  },
+
   initialize: function () {
     this.collection.fetch();
     this.listenTo(this.collection, 'sync', this.render);
@@ -15,5 +21,21 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
       this.$el.append(itemContent);
     }.bind(this))
     return this;
-  }
+  },
+
+  likePost: function(event) {
+    console.log(this.collection)
+    console.log(new LsFinalproject.Collections.Likes)
+    // console.log(this.collection.getOrFetch($(event.currentTarget).data("id")))
+    debugger
+  },
+
+  commentPost: function(event) {
+    console.log("commentPost")
+  },
+
+  uncommentPost: function(event) {
+    console.log("uncommentPost")
+  },
+
 })

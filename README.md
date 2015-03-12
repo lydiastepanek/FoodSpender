@@ -38,7 +38,7 @@ I will add API routes to serve post data as JSON, then add Backbone models and c
 [Details][phase-two]
 
 ### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and `PostShow` views in this phase. I also plan to integrate Filepicker for file upload so users can add images to blog posts. I also want to make the post creation form have other JQuery UI features.
+I plan to use third-party libraries to add functionality to the `PostForm` and `PostShow` views in this phase. I also plan to integrate Paperclip for file upload so users can add images to blog posts. I also want to make the post creation form have other JQuery UI features.
 
 ### Phase 4: Design (~2 Days)
 I want to make it visually appealing using CSS. I would like to add seed data of instagram photos for some of the posts.

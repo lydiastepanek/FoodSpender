@@ -5,7 +5,7 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   },
 
   routes: {
-    'api': 'index'
+    '': 'index'
   },
 
   index: function () {
