@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', require: 'bcrypt'
 
+gem 'backbone-on-rails'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
