@@ -5,6 +5,9 @@ window.LsFinalproject = {
   Routers: {},
   initialize: function() {
     alert('Hello from Backbone!');
+    LsFinalproject.posts = new LsFinalproject.Collections.Posts();
+    new LsFinalproject.Routers.PostRouter({$rootEl: $("#content")});
+    Backbone.history.start()
   }
 };
 

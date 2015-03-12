@@ -16,8 +16,8 @@
 //= require backbone
 //= require ls_finalproject
 //= require_tree ../templates
+//= require_tree ./routers
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
-//= require_tree ./routers
 //= require_tree .

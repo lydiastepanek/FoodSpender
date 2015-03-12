@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'root#root'
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:show, :index]
     resources :posts, only: [:show, :index]
