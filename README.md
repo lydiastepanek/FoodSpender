@@ -5,10 +5,10 @@
 [heroku]: https://foodspending.herokuapp.com/users/new
 
 ## Minimum Viable Product
-FoodSpender is a clone of Venmo built on Rails and Backbone, used to track spending on food rather than transactions between friends. Users can:
+FoodSpender is a clone of myfitnesspal built on Rails and Backbone, used to track spending on food rather than exercise and weight. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Post to profile wall (public and private)
 - [ ] Attach photos to posts
 - [ ] View posts (and friends' posts) on newsfeed
@@ -33,13 +33,18 @@ I will implement user authentication in Rails based on the practices learned at 
 [Details][phase-one]
 
 ### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this phase, users will be able to create blogs and view both blogs and posts, all inside a single Backbone app.
+I will add API routes to serve post data as JSON, then add Backbone models and collections that fetch data from those routes. By the end of this phase, users will be able to create blogs and view both "Recent Activity" blogs and posts, all inside a single Backbone app.
 
 [Details][phase-two]
 
 ### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and `PostShow` views in this phase. First I'll need to add a Markdown editor to the `PostForm`, and make sure that the Markdown is properly escaped and formatted in the `PostShow` view. I also plan to integrate Filepicker for file upload so users can add images to blog posts.
+I plan to use third-party libraries to add functionality to the `PostForm` and `PostShow` views in this phase. I also plan to integrate Filepicker for file upload so users can add images to blog posts. I also want to make the post creation form have other JQuery UI features.
+
+### Phase 4: Design (~2 Days)
+I want to make it visually appealing using CSS. I would like to add seed data of instagram photos for some of the posts.
+
+### Phase 5: Add Trends Page
+I want to make a separate tab away from posts that is more data visualization. I want to find and use a gem that creates cool data visualization.
 
 [Details][phase-three]
 
