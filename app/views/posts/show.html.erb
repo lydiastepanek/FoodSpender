@@ -7,12 +7,22 @@
 <li><%= @post.num_meals %></li>
 <li><%= @post.image_url %></li>
 
+<%= button_to "Like", post_likes_url(@post), method: "post" %>
+
+<br>
+Likes:
+<% @post.likes.each do |like| %>
+<li><%= like.author.first_name %><br></li>
+<%= button_to "Unlike", post_like_url(@post, like), method: "delete" %>
+<% end %>
+
 <br>
 Comments:
-<div>
 <% @post.comments.each do |comment| %>
-<li><%= comment.content %><br></li>
+<li><%= comment.content %></li>
+<br>
+<%= button_to "Delete Comment", post_comment_url(@post, comment), method: "delete" %>
+<br>
 <% end %>
-</div>
 
 <a href="/posts/<%= @post.id %>/comments/new">Add Comment</a>

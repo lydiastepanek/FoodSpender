@@ -12,6 +12,24 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :friendships,
+    class_name: "Friendship",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many :friends, :through => :friendships
+
+  has_many(
+    :inverse_friendships,
+    class_name: "Friendship",
+    foreign_key: :friend_id,
+    primary_key: :id
+  )
+
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
     return nil unless user

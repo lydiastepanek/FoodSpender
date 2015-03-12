@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311180154) do
+ActiveRecord::Schema.define(version: 20150311202135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 20150311180154) do
   create_table "foodtypes", force: true do |t|
     t.string "title"
   end
+
+  create_table "friendships", force: true do |t|
+    t.integer "user_id",   null: false
+    t.integer "friend_id", null: false
+  end
+
+  add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id", using: :btree
+  add_index "friendships", ["user_id"], name: "index_friendships_on_user_id", using: :btree
+
+  create_table "likes", force: true do |t|
+    t.integer "post_id",  null: false
+    t.integer "owner_id", null: false
+  end
+
+  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "owner_id",    null: false

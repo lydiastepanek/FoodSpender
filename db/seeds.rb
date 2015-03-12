@@ -13,6 +13,12 @@
 #     model_object.delete_all
 #     ActiveRecord::Base.connection.reset_pk_sequence!(model_object)
 # end
+User.delete_all
+Foodtype.delete_all
+Post.delete_all
+Comment.delete_all
+Like.delete_all
+Friendship.delete_all
 
 u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen")
 u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek")
@@ -150,10 +156,14 @@ c1 = p1.comments.create!(content: "Great deal on day 1!", owner_id: u2.id)
 c2 = p1.comments.create!(content: "Nice job!", owner_id: u3.id)
 c3 = p1.comments.create!(content: "Wow!", owner_id: u4.id)
 
-c4 = p2.comments.create!(content: "You bought the same thing again?", owner_id: u2.id)
-c5 = p2.comments.create!(content: "How did you get the same deal twice!", owner_id: u3.id)
-c6 = p2.comments.create!(content: "Can't believe how often you grocery shop!", owner_id: u4.id)
+l1 = p1.likes.create!(owner_id: u2.id)
+l2 = p1.likes.create!(owner_id: u3.id)
+l3 = p1.likes.create!(owner_id: u4.id)
 
+u1.friendships.create!(friend_id: u2.id)
+u1.friendships.create!(friend_id: u3.id)
+u1.friendships.create!(friend_id: u4.id)
+u1.friendships.create!(friend_id: u5.id)
 
 
 

@@ -7,6 +7,11 @@ module Api
       render :show #, formats: [:json]
     end
 
+    def index
+      @users = User.all
+      render :index
+    end
+
   end
 
 end

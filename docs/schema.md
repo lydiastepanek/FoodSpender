@@ -15,7 +15,7 @@ description | string    |
 created_at  | datetime
 updated_at  | datetime
 
-## friends
+## friendships
 column name | data type | details
 ------------|-----------|-----------------------
 user_id     | integer   | not null, foreign key (references users)

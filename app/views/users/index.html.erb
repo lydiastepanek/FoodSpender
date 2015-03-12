@@ -2,6 +2,7 @@
 
 <% @users.each do |user| %>
 <a href="<%= user_url(user)%>"><%= user.email %></a><br>
+<%= button_to "Add Friend", user_friendships_url(user), method: "post" %>
 
   <% user.posts.each do |post| %>
   <ul>

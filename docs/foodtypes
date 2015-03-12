@@ -1,6 +1,3 @@
-f1 = Foodtype.create!(title: "")
-
-
 Afghan
 African
 American (New)
