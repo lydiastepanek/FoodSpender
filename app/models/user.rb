@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   def all_friends
-    (friends.concat(inverse_friends)).uniq
+    # (friends.concat(inverse_friends))
+    (self.friends + self.inverse_friends).uniq
   end
 
   def self.find_by_credentials(email, password)

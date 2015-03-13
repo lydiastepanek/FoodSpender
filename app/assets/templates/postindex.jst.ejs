@@ -18,11 +18,9 @@
     <ul>
 
     <% _.each(LsFinalproject.current_user_friends, function(friend) { %>
-      <% _.each(friend, function(f) { %>
         <li>
-          <%= f.email %>
+          <%= friend.email %>
         </li>
-        <% }) %>
     <% }) %>
   </ul>
   </li>
