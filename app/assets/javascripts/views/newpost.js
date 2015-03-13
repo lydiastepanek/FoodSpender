@@ -14,7 +14,6 @@ LsFinalproject.Views.NewPost = Backbone.View.extend({
     return this;
   },
 
-  // :owner_id, :food_id, :price, :description
   createPost: function(event) {
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)

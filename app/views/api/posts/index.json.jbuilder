@@ -25,8 +25,15 @@ json.array! @posts do |post|
   end
 
   json.like_count post.likes.count
-  json.like_of_current_user (post.likes.find {|like| like.owner_id == current_user.id})
+  json.like_of_current_user (post.likes.find {|like| like.owner_id == current_user.id}).try(:id)
   json.is_liked_by_current_user !!(post.likes.find {|like| like.owner_id == current_user.id})
 
+  json.likes post.likes do |like|
+    json.id like.id
+    json.post_id like.post_id
+    json.post like.post
+    json.owner_id like.owner_id
+    json.author like.author
+  end
 
 end

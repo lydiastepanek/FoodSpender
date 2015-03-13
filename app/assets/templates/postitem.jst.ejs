@@ -11,7 +11,7 @@
 <li>Likes: <%= post.get('like_count') %></li>
 
 <% if (post.get("is_liked_by_current_user")) { %>
-  <button id="unlike-button" name="button" data-id="<%= post.get('like_of_current_user').id %>">Unlike</button>
+  <button id="unlike-button" name="button" data-id="<%= post.get('like_of_current_user') %>">Unlike</button>
 <% } else { %>
   <button id="like-button" name="button">Like</button>
 <% } %>
