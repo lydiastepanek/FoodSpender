@@ -1,3 +1,30 @@
 <h1>Posts</h1>
 
-<a href="<%= '#/api/new' %>">Write a new post</a>
+<a href="<%= '#/api/new' %>">Write Post</a>
+
+<h2>Menu</h2>
+<ul>
+
+  <li>
+    <a href="<%= '#/api/new' %>">Write Post</a>
+  </li>
+
+  <li>
+    <a href="<%= '#' %>">Trends</a>
+  </li>
+
+  <li>
+  Friends
+    <ul>
+
+    <% _.each(LsFinalproject.current_user_friends, function(friend) { %>
+      <% _.each(friend, function(f) { %>
+        <li>
+          <%= f.email %>
+        </li>
+        <% }) %>
+    <% }) %>
+  </ul>
+  </li>
+
+</ul>

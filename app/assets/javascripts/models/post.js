@@ -36,7 +36,11 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
     var like = new LsFinalproject.Models.Like({
       owner_id: LsFinalproject.current_user_id,
       post_id: this.id})
-    like.save()
+    like.save({}, {
+      success: function () {
+        this.likes().add(like)
+      }.bind(this)
+    })
   },
 
   removeComment: function(comment) {
@@ -47,12 +51,13 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
     var comment = new LsFinalproject.Models.Comment({
       owner_id: LsFinalproject.current_user_id,
       post_id: this.id,
-      content: content})
-    comment.save({
+      content: content
+    });
+    comment.save({}, {
       success: function () {
-        this.comments().add(comment)
+        this.comments().add(comment);
       }.bind(this)
-    })
+    });
   }
 
 })

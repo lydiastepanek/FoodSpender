@@ -4,11 +4,6 @@ LsFinalproject.Views.PostsIndexNewComment = Backbone.View.extend({
 
   template: JST['newcomment'],
 
-  initilize: function(options) {
-    this.parent_view = options.parent_view
-    this.listenTo(this.model.comments(), 'add', this.parent_view.render());
-  },
-
   events: {
     'submit': 'addComment'
   },

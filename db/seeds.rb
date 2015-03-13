@@ -164,7 +164,8 @@ u1.friendships.create!(friend_id: u2.id)
 u1.friendships.create!(friend_id: u3.id)
 u1.friendships.create!(friend_id: u4.id)
 u1.friendships.create!(friend_id: u5.id)
-
+u2.friendships.create!(friend_id: u4.id)
+u2.friendships.create!(friend_id: u5.id)
 
 
 

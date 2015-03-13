@@ -9,8 +9,8 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model.likes(), 'add remove', this.render);
-    this.listenTo(this.model.comments(), 'remove', this.render);
+    this.listenTo(this.model.likes(), 'remove add', this.render);
+    this.listenTo(this.model.comments(), 'remove add', this.render);
   },
 
   render: function() {
@@ -36,7 +36,7 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   commentPost: function() {
-    var commentContent = new LsFinalproject.Views.PostsIndexNewComment({model: this.model, parent_view: this});
+    var commentContent = new LsFinalproject.Views.PostsIndexNewComment({model: this.model});
     this.$el.append(commentContent.render().$el);
   },
 
