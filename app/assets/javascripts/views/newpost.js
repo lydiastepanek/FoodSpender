@@ -15,6 +15,7 @@ LsFinalproject.Views.NewPost = Backbone.View.extend({
   },
 
   createPost: function(event) {
+    event.preventDefault
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
     this.model.set('owner_id', LsFinalproject.current_user_id)
