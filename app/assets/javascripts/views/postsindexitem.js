@@ -9,39 +9,35 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   initialize: function () {
-    this.model.fetch();
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model.likes(), 'add remove', this.render);
+    this.listenTo(this.model.comments(), 'remove', this.render);
   },
 
   render: function() {
     var itemContent = this.template({post: this.model});
-    this.$el.append(itemContent);
+    this.$el.html(itemContent);
     return this;
   },
 
   likePost: function(event) {
-    console.log("likePost")
+    this.model.addLike()
   },
 
   unlikePost: function(event) {
-    console.log($(event.currentTarget).data("id"))
     var like_id = $(event.currentTarget).data("id")
-    // var like = new LsFinalproject.Models.Like({id: like_id})
-    // debugger
-    // console.log(like.id)
-    // like.fetch({
-    //   success: function () {
-    //     console.log(post)
-    //   }
-    // })
-  },
-
-  commentPost: function(event) {
-    console.log("commentPost")
+    var like = this.model.likes().get(like_id)
+    this.model.removeLike(like)
   },
 
   uncommentPost: function(event) {
-    console.log("uncommentPost")
+    var comment_id = $(event.currentTarget).data("id")
+    var comment = this.model.comments().get(comment_id)
+    this.model.removeComment(comment)
+  },
+
+  commentPost: function() {
+    var commentContent = new LsFinalproject.Views.PostsIndexNewComment({model: this.model, parent_view: this});
+    this.$el.append(commentContent.render().$el);
   },
 
 })

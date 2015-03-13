@@ -24,7 +24,6 @@ json.array! @posts do |post|
     json.is_written_by_current_user current_user == comment.author
   end
 
-  json.like_count post.likes.count
   json.like_of_current_user (post.likes.find {|like| like.owner_id == current_user.id}).try(:id)
   json.is_liked_by_current_user !!(post.likes.find {|like| like.owner_id == current_user.id})
 

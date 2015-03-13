@@ -8,19 +8,20 @@ LsFinalproject.Collections.Likes = Backbone.Collection.extend({
     this.post = options.post
   },
 
-  getOrFetch: function(id) {
-    var model = this.get(id);
-    if (!model) {
-      model = new LsFinalproject.Models.Like;
-      model.save({id: id}, {
-        success: function () {
-          this.add(model)
-        }
-      })
-    } else {
-      model.fetch()
-    }
-    return model;
-  }
+
+  // getOrFetch: function(id) {
+  //   var model = this.get(id);
+  //   if (!model) {
+  //     model = new LsFinalproject.Models.Like;
+  //     model.save({id: id}, {
+  //       success: function () {
+  //         this.add(model)
+  //       }
+  //     })
+  //   } else {
+  //     model.fetch()
+  //   }
+  //   return model;
+  // }
 
 })
