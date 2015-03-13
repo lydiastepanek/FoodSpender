@@ -9,7 +9,3 @@ window.LsFinalproject = {
     Backbone.history.start()
   }
 };
-
-$(document).ready(function(){
-  LsFinalproject.initialize();
-});

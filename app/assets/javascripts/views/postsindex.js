@@ -3,6 +3,7 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
 
   events: {
     'click #like-button': 'likePost',
+    'click #unlike-button': 'unlikePost',
     'click #comment-button': 'commentPost',
     'click #uncomment-button': 'uncommentPost'
   },
@@ -24,10 +25,18 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
   },
 
   likePost: function(event) {
-    console.log(this.collection)
-    console.log(new LsFinalproject.Collections.Likes)
-    // console.log(this.collection.getOrFetch($(event.currentTarget).data("id")))
-    debugger
+    console.log("likePost")
+  },
+
+  unlikePost: function(event) {
+    var like_id = $(event.currentTarget).data("id")
+    var like = new LsFinalproject.Models.Like({id: like_id})
+    console.log(like.id)
+    like.fetch({
+      success: function () {
+        console.log(post)
+      }
+    })
   },
 
   commentPost: function(event) {

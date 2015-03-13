@@ -5,7 +5,14 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'index'
+    '': 'index',
+    'api/new': 'new'
+  },
+
+  new: function () {
+    var post = new LsFinalproject.Models.Post;
+    var indexView = new LsFinalproject.Views.NewPost({collection: LsFinalproject.posts, model: post})
+    this.switchView(indexView)
   },
 
   index: function () {

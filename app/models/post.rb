@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :owner_id, :food_id, :price, :description, presence: true
+  validates :owner_id, :food_id, :food_type, :price, :description, presence: true
   validates :description, uniqueness: {scope: :owner_id, message: "must be different for every post" }
 
   belongs_to(

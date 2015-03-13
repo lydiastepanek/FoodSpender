@@ -5,9 +5,11 @@ json.extract! @post,
               :price,
               :num_meals,
               :image_url,
-              :description
+              :description,
+              :food_id,
+              :score_id
 
-json.food_type @post.food_type.title
+json.food_type @post.food_type
 json.author_name @post.author.first_name
 
 json.comment_count @post.comments.count
@@ -21,4 +23,5 @@ json.comments @post.comments do |comment|
 end
 
 json.like_count @post.likes.count
+json.like_of_current_user (post.likes.find {|like| like.owner_id == current_user.id})
 json.is_liked_by_current_user !!(@post.likes.find {|like| like.owner_id == current_user.id})
