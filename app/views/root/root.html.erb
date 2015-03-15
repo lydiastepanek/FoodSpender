@@ -5,5 +5,6 @@ $(document).ready(function(){
   LsFinalproject.initialize();
   LsFinalproject.current_user_id = <%= current_user.id %>
   LsFinalproject.current_user_friends = <%= current_user.all_friends.to_json.html_safe %>
+  LsFinalproject.all_food_types = <%= Foodtype.all.to_json.html_safe %>
 });
 </script>

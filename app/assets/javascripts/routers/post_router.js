@@ -11,8 +11,8 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
 
   new: function () {
     var post = new LsFinalproject.Models.Post;
-    var indexView = new LsFinalproject.Views.NewPost({collection: LsFinalproject.posts, model: post})
-    this.switchView(indexView)
+    var newView = new LsFinalproject.Views.NewPost({collection: LsFinalproject.posts, model: post})
+    this.switchView(newView)
   },
 
   index: function () {

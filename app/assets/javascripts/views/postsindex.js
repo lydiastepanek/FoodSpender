@@ -7,13 +7,6 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
   },
 
   render: function() {
-    // var json = JSON.parse(LsFinalproject.current_user_friends)
-    // console.log(json.first()['email'])
-    _.each(LsFinalproject.current_user_friends, function(friend) {
-      _.each(friend, function(f) {
-        console.log(f.first_name)
-      })
-    })
     var content = this.template({posts: this.collection});
     this.$el.html(content);
     this.collection.each(function (post) {

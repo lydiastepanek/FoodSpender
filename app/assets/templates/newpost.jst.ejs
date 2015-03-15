@@ -10,9 +10,21 @@
   <input id="location" type="text" name="location">
 
   <br>
-  <label for="food_id">Food ID</label>
-  <input id="food_id" type="text" name="food_id">
 
+  <label for="food_id">Food Type</label>
+  <select id="food_id">
+      <% _.each(LsFinalproject.all_food_types, function(foodType) { %>
+          <option>
+            <%= foodType.title %>
+          </option>
+      <% }) %>
+  </select>
+
+  <!-- <% _.each(LsFinalproject.current_user_friends, function(friend) { %>
+      <li>
+        <%= friend.email %>
+      </li>
+  <% }) %> -->
   <br>
   <label for="price">Price</label>
   <input id="price" type="text" name="price">
@@ -22,6 +34,10 @@
   <input id="score_id" type="text" name="score_id">
 
   <br>
+  <label for="qty">Quantity of meals provided</label>
+  <input id="qty" type="text" name="num_meals">
+
+    <br>
   <button>Submit</button>
 
 </form>
