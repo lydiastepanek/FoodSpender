@@ -1,0 +1,25 @@
+<h1><%= user.escape('first_name') %> Posts</h1>
+
+<h2>Menu</h2>
+<ul>
+
+  <li>
+    <a href="<%= '#' %>">Trends</a>
+  </li>
+
+  <li>
+  Friends<br>
+  <%= user.escape('all_friends') %><br>
+
+    <ul>
+
+    <% _.each(user.escape('all_friends'), function(friend) { %>
+        <li>
+          <%= friend.email %>
+        </li>
+    <% }) %>
+
+    </ul>
+  </li>
+
+</ul>

@@ -12,19 +12,14 @@
   <br>
 
   <label for="food_id">Food Type</label>
-  <select id="food_id">
+  <select id="food_id" name="food_id">
       <% _.each(LsFinalproject.all_food_types, function(foodType) { %>
-          <option>
+          <option value="<%= foodType.id %>">
             <%= foodType.title %>
           </option>
       <% }) %>
   </select>
 
-  <!-- <% _.each(LsFinalproject.current_user_friends, function(friend) { %>
-      <li>
-        <%= friend.email %>
-      </li>
-  <% }) %> -->
   <br>
   <label for="price">Price</label>
   <input id="price" type="text" name="price">
@@ -32,6 +27,11 @@
   <br>
   <label for="score_id">Score</label>
   <input id="score_id" type="text" name="score_id">
+
+    <!-- selector ~ selctor
+    radio button with star as background image
+    background position will move it
+    if something is checked, anything after it not starred -->
 
   <br>
   <label for="qty">Quantity of meals provided</label>

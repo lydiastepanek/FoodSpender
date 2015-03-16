@@ -1,5 +1,5 @@
 LsFinalproject.Views.PostsIndex = Backbone.View.extend({
-  template: JST['postindex'],
+  template: JST['post_index'],
 
   initialize: function () {
     this.collection.fetch();

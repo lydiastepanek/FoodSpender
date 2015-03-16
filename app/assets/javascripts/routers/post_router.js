@@ -6,10 +6,11 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'api/new': 'new'
+    'api/new': 'newPost',
+    'user/:id': 'userShow'
   },
 
-  new: function () {
+  newPost: function () {
     var post = new LsFinalproject.Models.Post;
     var newView = new LsFinalproject.Views.NewPost({collection: LsFinalproject.posts, model: post})
     this.switchView(newView)
@@ -18,6 +19,12 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   index: function () {
     var indexView = new LsFinalproject.Views.PostsIndex({collection: LsFinalproject.posts})
     this.switchView(indexView)
+  },
+
+  userShow: function (id) {
+    var user = LsFinalproject.users.getOrFetch(id)
+    var showView = new LsFinalproject.Views.UserShow({model: user, collection: LsFinalproject.posts});
+    this.switchView(showView)
   },
 
   switchView: function (view) {

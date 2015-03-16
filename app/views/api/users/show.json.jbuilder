@@ -45,3 +45,10 @@ json.inverse_friends @user.inverse_friends do |inverse_friends|
   json.first_name inverse_friends.first_name
   json.last_name inverse_friends.last_name
 end
+
+json.all_friends @user.all_friends do |friend|
+  json.id friend.id
+  json.email friend.email
+  json.first_name friend.first_name
+  json.last_name friend.last_name
+end
