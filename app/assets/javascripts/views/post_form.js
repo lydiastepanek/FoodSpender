@@ -27,20 +27,6 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
 
   createPost: function(event) {
     event.preventDefault();
-    var rating = this.model.ratings().findWhere({user_id: this.model.get("owner_id")})
-    $('#user_star').raty({
-      score: this.model.get('rating'),
-      path: '/assets',
-      click: function(score, evt) {
-        $.ajax({
-          url: '/api/ratings/' + rating.id,
-          type: 'PATCH',
-          data: { score: score }
-        });
-      }
-    });
-
-
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
     this.model.set('owner_id', LsFinalproject.current_user_id)
