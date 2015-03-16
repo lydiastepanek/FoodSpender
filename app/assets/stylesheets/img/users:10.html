@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:3000/# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+</head><body>Hello lydia.stepanek@gmail.com
+<form action="http://localhost:3000/session" class="button_to" method="post"><div><input name="_method" type="hidden" value="delete"><input type="submit" value="Sign Out"><input name="authenticity_token" type="hidden" value="sojLWx/V6hEcMUXhriFh7ck4VUva7/kMI1hThFtk050="></div></form>
+
+  <title>FoodSpender</title>
+  <link href="http://localhost:3000/assets/application.css?body=1" media="all" rel="stylesheet">
+  <script src="./users:10_files/jquery.js"></script>
+<script src="./users:10_files/jquery_ujs.js"></script>
+<script src="./users:10_files/underscore.js"></script>
+<script src="./users:10_files/backbone.js"></script>
+<script src="./users:10_files/jquery.serializejson.js"></script>
+<script src="./users:10_files/ls_finalproject.js"></script>
+<script src="./users:10_files/new_comment.js"></script>
+<script src="./users:10_files/new_post.js"></script>
+<script src="./users:10_files/post_index.js"></script>
+<script src="./users:10_files/post_item.js"></script>
+<script src="./users:10_files/user_show.js"></script>
+<script src="./users:10_files/post_router.js"></script>
+<script src="./users:10_files/comment.js"></script>
+<script src="./users:10_files/friend.js"></script>
+<script src="./users:10_files/like.js"></script>
+<script src="./users:10_files/post.js"></script>
+<script src="./users:10_files/user.js"></script>
+<script src="./users:10_files/comments.js"></script>
+<script src="./users:10_files/friends.js"></script>
+<script src="./users:10_files/likes.js"></script>
+<script src="./users:10_files/posts.js"></script>
+<script src="./users:10_files/users.js"></script>
+<script src="./users:10_files/new_post(1).js"></script>
+<script src="./users:10_files/post_index_new_comment.js"></script>
+<script src="./users:10_files/posts_index.js"></script>
+<script src="./users:10_files/posts_index_item.js"></script>
+<script src="./users:10_files/user_show(1).js"></script>
+<script src="./users:10_files/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="sojLWx/V6hEcMUXhriFh7ck4VUva7/kMI1hThFtk050=" name="csrf-token">
+
+
+
+<h1>FoodSpending App</h1>
+
+<script>
+$(document).ready(function(){
+  LsFinalproject.current_user_id = 10
+  LsFinalproject.current_user_friends = [{"id":6,"email":"valerie.hansen@yale.edu","password_digest":"$2a$10$MRrR4mT/E3B3kp09HnYE7uyIRR9Pu.b/U59Qjb7zgOV76ZWbi.i72","session_token":"ZM06g4SnGeX8hbsnNk6ZpA","created_at":"2015-03-16T13:29:35.155Z","updated_at":"2015-03-16T13:29:35.155Z","first_name":"Valerie","last_name":"Hansen"},{"id":7,"email":"james.b.stepanek@gmail.com","password_digest":"$2a$10$w8d7hvXaIzI7Ri1KdiGHyuzK8l8FsyJGXa2hg75.cQJVgtau8i0lu","session_token":"lcAIkdt5wP_kvNRUVo3iOg","created_at":"2015-03-16T13:29:35.268Z","updated_at":"2015-03-16T13:29:35.268Z","first_name":"James","last_name":"Stepanek"}]
+  LsFinalproject.all_food_types = [{"id":111,"title":"Afghan"},{"id":112,"title":"African"},{"id":113,"title":"American (New)"},{"id":114,"title":"American (Traditional)"},{"id":115,"title":"Arabian"},{"id":116,"title":"Argentine"},{"id":117,"title":"Armenian"},{"id":118,"title":"Asian Fusion"},{"id":119,"title":"Australian"},{"id":120,"title":"Austrian"},{"id":121,"title":"Bangladeshi"},{"id":122,"title":"Barbeque"},{"id":123,"title":"Basque"},{"id":124,"title":"Belgian"},{"id":125,"title":"Brasseries"},{"id":126,"title":"Brazilian"},{"id":127,"title":"Breakfast \u0026 Brunch"},{"id":128,"title":"British"},{"id":129,"title":"Buffets"},{"id":130,"title":"Burgers"},{"id":131,"title":"Burmese"},{"id":132,"title":"Cafes"},{"id":133,"title":"Cafeteria"},{"id":134,"title":"Cajun/Creole"},{"id":135,"title":"Cambodian"},{"id":136,"title":"Caribbean"},{"id":137,"title":"Catalan"},{"id":138,"title":"Cheesesteaks"},{"id":139,"title":"Chicken Shop"},{"id":140,"title":"Chicken Wings"},{"id":141,"title":"Chinese"},{"id":142,"title":"Comfort Food"},{"id":143,"title":"Creperies"},{"id":144,"title":"Cuban"},{"id":145,"title":"Czech"},{"id":146,"title":"Delis"},{"id":147,"title":"Diners"},{"id":148,"title":"Ethiopian"},{"id":149,"title":"Fast Food"},{"id":150,"title":"Filipino"},{"id":151,"title":"Fish \u0026 Chips"},{"id":152,"title":"Fondue"},{"id":153,"title":"Food Court"},{"id":154,"title":"Food Stands"},{"id":155,"title":"French"},{"id":156,"title":"Gastropubs"},{"id":157,"title":"German"},{"id":158,"title":"Gluten-Free"},{"id":159,"title":"Greek"},{"id":160,"title":"Halal"},{"id":161,"title":"Hawaiian"},{"id":162,"title":"Himalayan/Nepalese"},{"id":163,"title":"Hot Dogs"},{"id":164,"title":"Hot Pot"},{"id":165,"title":"Hungarian"},{"id":166,"title":"Iberian"},{"id":167,"title":"Indian"},{"id":168,"title":"Indonesian"},{"id":169,"title":"Irish"},{"id":170,"title":"Italian"},{"id":171,"title":"Japanese"},{"id":172,"title":"Korean"},{"id":173,"title":"Kosher"},{"id":174,"title":"Laotian"},{"id":175,"title":"Latin American"},{"id":176,"title":"Live/Raw Food"},{"id":177,"title":"Malaysian"},{"id":178,"title":"Mediterranean"},{"id":179,"title":"Mexican"},{"id":180,"title":"Middle Eastern"},{"id":181,"title":"Modern European"},{"id":182,"title":"Mongolian"},{"id":183,"title":"Moroccan"},{"id":184,"title":"Pakistani"},{"id":185,"title":"Persian/Iranian"},{"id":186,"title":"Peruvian"},{"id":187,"title":"Pizza"},{"id":188,"title":"Polish"},{"id":189,"title":"Portuguese"},{"id":190,"title":"Poutineries"},{"id":191,"title":"Russian"},{"id":192,"title":"Salad"},{"id":193,"title":"Sandwiches"},{"id":194,"title":"Scandinavian"},{"id":195,"title":"Scottish"},{"id":196,"title":"Seafood"},{"id":197,"title":"Singaporean"},{"id":198,"title":"Slovakian"},{"id":199,"title":"Soul Food"},{"id":200,"title":"Soup"},{"id":201,"title":"Southern"},{"id":202,"title":"Spanish"},{"id":203,"title":"Sri Lankan"},{"id":204,"title":"Steakhouses"},{"id":205,"title":"Sushi Bars"},{"id":206,"title":"Taiwanese"},{"id":207,"title":"Tapas Bars"},{"id":208,"title":"Tapas/Small Plates"},{"id":209,"title":"Tex-Mex"},{"id":210,"title":"Thai"},{"id":211,"title":"Turkish"},{"id":212,"title":"Ukrainian"},{"id":213,"title":"Uzbek"},{"id":214,"title":"Vegan"},{"id":215,"title":"Vegetarian"},{"id":216,"title":"Vietnamese"},{"id":217,"title":"Groceries"},{"id":218,"title":"Wine"},{"id":219,"title":"Beer"},{"id":220,"title":"Spirits"}]
+  LsFinalproject.initialize();
+});
+</script>
+
+<section id="content">
+
+<div><h1>Posts</h1>
+
+<h2>Menu</h2>
+<ul>
+
+  <li>
+    <a href="http://localhost:3000/#/api/new">Write Post</a>
+  </li>
+
+  <li>
+    <a href="./users:10_files/users:10.html">Trends</a>
+  </li>
+
+  <li>
+  Friends
+    <ul>
+
+    
+        <li>
+          valerie.hansen@yale.edu
+        </li>
+    
+        <li>
+          james.b.stepanek@gmail.com
+        </li>
+    
+  </ul>
+  </li>
+
+</ul>
+<div><h1>Groceries Day1</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Groceries</li>
+<li>Price: $314.25</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 3</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+    <li>
+    Claire Stepanek:
+    Wow!
+    
+    </li>
+  
+    <li>
+    Bret Stepanek:
+    Nice job!
+    
+    </li>
+  
+    <li>
+    James Stepanek:
+    Great deal on day 1!
+    
+    </li>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Groceries Day2</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Groceries</li>
+<li>Price: $314.25</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Groceries Day3</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Groceries</li>
+<li>Price: $314.25</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Groceries Day4</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Groceries</li>
+<li>Price: $314.25</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Wine Day1</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Wine</li>
+<li>Price: $20.1</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Wine Day2</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Wine</li>
+<li>Price: $20.1</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Wine Day3</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Wine</li>
+<li>Price: $120.9</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Wine Day4</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Wine</li>
+<li>Price: $20.1</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Pizza Day1</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Pizza</li>
+<li>Price: $4</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Taco Day2</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Mexican</li>
+<li>Price: $7</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Dosa Day3</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Indian</li>
+<li>Price: $11</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Indian Day4</h1>
+
+<ul>
+
+<li>Score: </li>
+<li>Location: </li>
+<li>Food Category: Indian</li>
+<li>Price: $20.1</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 1</li>
+
+
+  <button id="unlike-button" name="button" data-id="7">Unlike</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+    <li>
+    Lydia Stepanek:
+    What??
+    
+      <button id="uncomment-button" name="button" data-id="7">Remove Comment</button>
+    
+    </li>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div><div><h1>Test</h1>
+
+<ul>
+
+<li>Score: 1</li>
+<li>Location: </li>
+<li>Food Category: Australian</li>
+<li>Price: $1</li>
+<li>Quantity of meals: </li>
+<li>Image: </li>
+<li>Likes: 0</li>
+
+
+  <button id="like-button" name="button">Like</button>
+
+
+<li>Comments:
+
+  <ul>
+  
+  </ul>
+
+</li>
+
+<button id="comment-button" name="button">Add Comment</button>
+
+</ul>
+</div></div></section>
+
+
+
+
+</body></html>

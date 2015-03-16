@@ -30,6 +30,13 @@ class User < ActiveRecord::Base
 
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
+  has_many(
+    :ratings,
+    class_name: "Rating",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
   def all_friends
     # (friends.concat(inverse_friends))
     (self.friends + self.inverse_friends).uniq

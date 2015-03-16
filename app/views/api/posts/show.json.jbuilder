@@ -10,7 +10,7 @@ json.extract! @post,
               :score_id
 
 json.food_type @post.food_type
-json.author_name @post.author.first_name
+json.author_name @post.author.first_name + ' ' + @post.author.last_name
 
 json.comment_count @post.comments.count
 json.comments @post.comments do |comment|
@@ -32,3 +32,21 @@ json.likes @post.likes do |like|
   json.owner_id like.owner_id
   json.author like.author
 end
+
+json.ratings @post.ratings do |rating|
+  json.post_id rating.post_id
+  json.user_id rating.user_id
+  json.score rating.score
+  json.post rating.post
+  json.user_name rating.user.first_name + ' ' + rating.user.last_name
+end
+
+# json.rating (Rating.where(post_id: @post.id, user_id: current_user.id).first).try(:score)
+json.rating (@post.ratings.find {|rating| rating.user_id == current_user.id}).try(:score)
+
+# if @rating
+#   json.extract! @rating,
+#           :post_id,
+#           :user_id,
+#           :score
+# end

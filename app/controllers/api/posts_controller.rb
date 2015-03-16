@@ -21,10 +21,22 @@ module Api
       end
     end
 
+    def destroy
+      @post = Post.find(params[:id])
+      @post.destroy
+      render json: @post
+    end
+
+    def update
+      @post = Post.find(params[:id])
+      @post.update(post_params)
+      render json: @post
+    end
+
     private
 
     def post_params
-      params.require(:post).permit(:score_id, :food_id, :price, :description)
+      params.require(:post).permit(:score_id, :food_id, :price, :description, :owner_id, :location, :num_meals, :image_url)
     end
 
   end

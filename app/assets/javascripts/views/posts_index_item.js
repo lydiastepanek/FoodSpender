@@ -5,7 +5,12 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
     'click #like-button': 'likePost',
     'click #unlike-button': 'unlikePost',
     'click #comment-button': 'commentPost',
-    'click #uncomment-button': 'uncommentPost'
+    'click #uncomment-button': 'uncommentPost',
+    'click #delete-post': 'deletePost'
+  },
+
+  deletePost: function () {
+    this.model.destroy()
   },
 
   initialize: function () {
@@ -20,12 +25,18 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   likePost: function(event) {
+    this.model.set("is_liked_by_current_user", true)
     this.model.addLike()
   },
 
   unlikePost: function(event) {
     var like_id = $(event.currentTarget).data("id")
-    var like = this.model.likes().get(like_id)
+    if (!like_id) {
+      var like = this.model.likes().pop()
+    } else {
+      var like = this.model.likes().get(like_id)
+    }
+    this.model.set("is_liked_by_current_user", false)
     this.model.removeLike(like)
   },
 

@@ -51,4 +51,11 @@ json.all_friends @user.all_friends do |friend|
   json.email friend.email
   json.first_name friend.first_name
   json.last_name friend.last_name
+  json.image_url friend.image_url
+end
+
+json.ratings @user.ratings do |rating|
+  json.post_id rating.post_id
+  json.user_id rating.user_id
+  json.score rating.score
 end

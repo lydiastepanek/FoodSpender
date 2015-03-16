@@ -1,7 +1,11 @@
 <h1><%= post.escape('description') %></h1>
 
+<button id="delete-post" name="button">Delete Post</button>
+<a href='#/posts/<%= post.id %>/edit'>Edit Post</a>
+
 <ul>
 
+<li>Author: <%= post.escape('author_name') %></li>
 <li>Score: <%= post.escape('score_id') %></li>
 <li>Location: <%= post.escape('location') %></li>
 <li>Food Category: <%= post.get('food_type').title %></li>

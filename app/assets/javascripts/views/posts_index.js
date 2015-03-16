@@ -3,7 +3,7 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
 
   initialize: function () {
     this.collection.fetch();
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync remove', this.render)
   },
 
   render: function() {

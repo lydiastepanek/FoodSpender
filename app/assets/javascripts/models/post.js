@@ -16,6 +16,13 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
     return this._comments
   },
 
+  ratings: function () {
+    if (!this._ratings) {
+      this._ratings = new LsFinalproject.Collections.Ratings([], {post: this})
+    }
+    return this._ratings
+  },
+
   parse: function (response) {
   if (response.likes) {
     this.likes().set(response.likes);
@@ -24,6 +31,10 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
   if (response.comments) {
     this.comments().set(response.comments);
     delete response.comments;
+  }
+  if (response.ratings) {
+    this.ratings().set(response.ratings);
+    delete response.ratings;
   }
     return response
   },
@@ -38,6 +49,7 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
       post_id: this.id})
     like.save({}, {
       success: function () {
+        this.set("like_of_current_user", like.id)
         this.likes().add(like)
       }.bind(this)
     })

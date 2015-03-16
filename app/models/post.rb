@@ -30,4 +30,11 @@ class Post < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :ratings,
+    class_name: "Rating",
+    foreign_key: :post_id,
+    primary_key: :id
+  )
+
 end
