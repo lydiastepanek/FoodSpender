@@ -4,8 +4,10 @@ module Api
 
     def update
       @rating = Rating.find(params[:id])
-      @rating.update(rating_params)
-      render json: @rating
+      @post = @rating.post
+      if @rating.update_attributes(score: params[:score])
+        render json: @rating
+      end
     end
 
     private
