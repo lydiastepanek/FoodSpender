@@ -26,33 +26,9 @@
 
   <br>
   <label for="score_id">Score</label>
-  <div class="score-options group">
-    <input id="score_id" type="radio" name="score_id" value="5">5
-    <input id="score_id" type="radio" name="score_id" value="4">4
-    <input id="score_id" type="radio" name="score_id" value="3">3
-    <input id="score_id" type="radio" name="score_id" value="2">2
-    <input id="score_id" type="radio" name="score_id" value="1">1
+  <div id="score_id" class="rating">
+  <span data-id="5" class="score">☆</span><span data-id="4" class="score">☆</span><span data-id="3" class="score">☆</span><span data-id="2" class="score">☆</span><span data-id="1" class="score">☆</span>
   </div>
-
-    <!-- selector ~ selector
-    radio button with star as background image
-    background position will move it
-    if something is checked, anything after it not starred -->
-
-  <ul>
-  <% post.ratings().each(function (rating) { %>
-    <li>
-    <%= rating.get("user_name") %>
-    <%= rating.get("score") %>
-    </li>
-  <% }) %>
-  </ul>
-
-  <%= post.score_id %>
-
-
-  <p>Your rating</p>
-  <div id="user_star"></div>
 
   <br>
   <label for="qty">Quantity of meals provided</label>

@@ -9,17 +9,20 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
   },
 
   events: {
-    'submit': 'createPost'
+    'submit': 'createPost',
+    'click .score': 'saveScore',
+  },
+
+  saveScore: function(event) {
+    event.preventDefault();
+    this.model.set('score_id', $(event.currentTarget).data("id"))
+    var numStars = $(event.currentTarget).data("id");
+    for (var i = numStars; i > 0; i--) {
+      $(".rating").find('[data-id="' + i + '"]').replaceWith("★")
+    }
   },
 
   render: function() {
-    if (this.model.ratings().first()) {
-      var rating = this.model.ratings().findWhere({user_id: this.model.get("owner_id")});
-      this.model.set('rating',rating.get('score'))
-    }
-    // console.log(this.model.get('rating')) // using ratings
-    // console.log(this.model.get('score_id')) // not using ratings
-
     var content = this.template({post: this.model});
     this.$el.html(content);
     return this;
