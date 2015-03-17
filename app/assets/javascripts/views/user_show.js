@@ -2,7 +2,7 @@ LsFinalproject.Views.UserShow = Backbone.View.extend({
   template: JST['user_show'],
 
   initialize: function () {
-    // this.model.fetch();
+    this.model.fetch();
     this.collection.fetch();
     this.listenTo(this.collection, 'sync', this.render)
   },

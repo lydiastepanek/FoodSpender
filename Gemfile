@@ -29,6 +29,10 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'backbone-on-rails'
 
+gem "paperclip", "~> 4.2"
+gem "aws-sdk"
+gem "figaro"
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'

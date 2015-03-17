@@ -5,10 +5,10 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'index',
+    'posts': 'index',
     'posts/new': 'newPost',
     'posts/:id/edit': 'editPost',
-    'users/:id': 'userShow'
+    'posts/users/:id': 'userShow'
   },
 
   editPost: function (id) {
