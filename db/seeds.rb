@@ -20,11 +20,11 @@ Comment.delete_all
 Like.delete_all
 Friendship.delete_all
 
-u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", image_url: "http://portablegamingregion.com/wp-content/uploads/2013/05/Google-Play-Games-Default-Profile-Avatar-Thumbnail-300x300.png")
-u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", image_url: "http://portablegamingregion.com/wp-content/uploads/2013/05/Google-Play-Games-Default-Profile-Avatar-Thumbnail-300x300.png")
-u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek", image_url: "http://portablegamingregion.com/wp-content/uploads/2013/05/Google-Play-Games-Default-Profile-Avatar-Thumbnail-300x300.png")
-u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek", image_url: "http://portablegamingregion.com/wp-content/uploads/2013/05/Google-Play-Games-Default-Profile-Avatar-Thumbnail-300x300.png")
-u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek", image_url: "http://portablegamingregion.com/wp-content/uploads/2013/05/Google-Play-Games-Default-Profile-Avatar-Thumbnail-300x300.png")
+u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen")
+u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek")
+u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek")
+u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek")
+u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek")
 
 f1 = Foodtype.create!(title: 'Afghan')
 f2 = Foodtype.create!(title: 'African')

@@ -20,7 +20,7 @@
     <% user.allFriends().each( function(friend) { %>
         <li>
           <a href="#users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
-          <img src="<%= friend.get("image_url") %>" alt="" />
+          INSERT PICTURE HERE
         </li>
     <% }) %>
 

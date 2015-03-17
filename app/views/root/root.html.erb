@@ -1,9 +1,13 @@
+<div id="header">
 <h1>FoodSpending App</h1>
+</div>
 
 <script>
 $(document).ready(function(){
-  LsFinalproject.current_user_id = <%= current_user.id %>
-  LsFinalproject.current_user_friends = <%= current_user.all_friends.to_json.html_safe %>
+  <% if current_user %>
+    LsFinalproject.current_user_id = <%= current_user.id %>;
+    LsFinalproject.current_user_friends = <%= current_user.all_friends.to_json.html_safe %>;
+  <% end %>
   LsFinalproject.all_food_types = <%= Foodtype.all.to_json.html_safe %>
   LsFinalproject.initialize();
 });

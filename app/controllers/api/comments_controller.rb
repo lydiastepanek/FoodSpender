@@ -1,7 +1,7 @@
 module Api
 
   class CommentsController < ApplicationController
-    before_action :redirect_if_not_logged_in
+    #before_action :redirect_if_not_logged_in
 
     def create
       @comment = Comment.new(comment_params)

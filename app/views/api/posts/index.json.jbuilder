@@ -6,7 +6,6 @@ json.array! @posts do |post|
                 :location,
                 :price,
                 :num_meals,
-                :image_url,
                 :description,
                 :food_id,
                 :score_id

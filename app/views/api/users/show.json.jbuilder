@@ -13,7 +13,6 @@ json.posts @user.posts do |post|
   json.food_type post.food_type
   json.price post.price
   json.num_meals post.num_meals
-  json.image_url post.image_url
   json.description post.description
   json.comments post.comments do |comment|
     json.id comment.id
@@ -51,7 +50,6 @@ json.all_friends @user.all_friends do |friend|
   json.email friend.email
   json.first_name friend.first_name
   json.last_name friend.last_name
-  json.image_url friend.image_url
 end
 
 json.ratings @user.ratings do |rating|

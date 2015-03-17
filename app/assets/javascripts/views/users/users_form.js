@@ -7,13 +7,13 @@ LsFinalproject.Views.UsersForm = Backbone.View.extend({
   template: JST['users/form'],
 
   events: {
-    "submit form": "submit"
+    "submit form": "submit",
+		"change #input-picture-file": "changePicture"
   },
 
   render: function(){
-    var html = this.template({ user: this.model });
-    this.$el.html(html);
-
+    var content = this.template({ user: this.model });
+    this.$el.html(content);
     return this;
   },
 
@@ -36,6 +36,21 @@ LsFinalproject.Views.UsersForm = Backbone.View.extend({
         console.log(data);
       }
     });
+  },
+
+  changePicture: function(event) {
+    var file = event.currentTarget.files[0];
+    var fileReader = new FileReader();
+    var that = this;
+    fileReader.onloadend = function () {
+      that.model.set("picture", fileReader.result);
+      that.previewPic(fileReader.result);
+    };
+    fileReader.readAsDataURL(file);
+  },
+
+  previewPic: function (src) {
+		this.$("#picture-preview").attr("src", src);
   }
 
 });

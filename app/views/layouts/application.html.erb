@@ -3,11 +3,6 @@
 <head>
 <%=  flash.now[:errors] %>
 
-<% if logged_in? %>
-<%= "Hello #{current_user.email}" %>
-<%= button_to 'Sign Out', session_url, method: :delete %>
-<% end %>
-
   <title>FoodSpender</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>

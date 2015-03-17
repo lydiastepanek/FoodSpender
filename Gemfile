@@ -30,7 +30,7 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'backbone-on-rails'
 
 gem "paperclip", "~> 4.2"
-gem "aws-sdk"
+gem "aws-sdk", '< 2.0'
 gem "figaro"
 
 group :development do

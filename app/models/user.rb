@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :email, uniqueness: true
 
+  has_attached_file :picture, default_url: "user_picture.png", :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
   has_many(
     :posts,
     class_name: "Post",
