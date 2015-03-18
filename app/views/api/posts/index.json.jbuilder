@@ -15,6 +15,7 @@ json.array! @posts do |post|
 
   json.food_type post.food_type
   json.author_name post.author.first_name + ' ' + post.author.last_name
+  json.author_picture_url image_url(post.author.picture.url)
 
   json.comment_count post.comments.count
   json.comments post.comments do |comment|

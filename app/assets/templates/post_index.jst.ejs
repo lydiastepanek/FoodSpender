@@ -1,28 +1,33 @@
-<h1>Posts</h1>
+<section class="content-sidebar">
 
-<h2>Menu</h2>
-<ul>
+  <h2>Menu</h2>
+  <ul class="profile-nav">
 
-  <li>
-    <a href="<%= '#posts/new' %>">Write Post</a>
-  </li>
+    <li>
+      <a href="<%= '#posts/new' %>">Write Post</a>
+    </li>
 
-  <li>
-    <a href="<%= '#' %>">Trends</a>
-  </li>
+    <li>
+      <a href="<%= '#' %>">Trends</a>
+    </li>
 
-  <li>
-  All Users
-    <ul>
-
-    <% users.each( function(friend) { %>
-        <li>
-          <a href="#posts/users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
-          <img src="<%= friend.escape('picture_url') %>"/>
-        </li>
-    <% }) %>
+    <li>All Users</li>
 
   </ul>
-  </li>
+
+  <ul class="profile-thumbs group">
+  <% users.each( function(friend) { %>
+      <li>
+        <a href="#posts/users/<%=friend.id%>" class="thumb" title="<%= friend.get("first_name") + ' ' + friend.get("last_name") %>">
+          <img src="<%= friend.escape('picture_url') %>"/>
+        </a>
+      </li>
+  <% }) %>
+  </ul>
+
+</section>
+
+<ul class="content-main">
+  <h1 class="content-header">PostsFeed</h1>
 
 </ul>

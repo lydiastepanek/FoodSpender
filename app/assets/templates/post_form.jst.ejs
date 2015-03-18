@@ -33,7 +33,41 @@
   <br>
   <label for="score_id">Score</label>
   <div id="score_id" class="rating">
-  <span data-id="5" class="score">☆</span><span data-id="4" class="score">☆</span><span data-id="3" class="score">☆</span><span data-id="2" class="score">☆</span><span data-id="1" class="score">☆</span>
+  <span data-id="5" class="score">
+    <% if (numStars >= 5) { %>
+      ★
+    <% } else { %>
+      ☆
+    <% }; %>
+  </span>
+  <span data-id="4" class="score">
+    <% if (numStars >= 4) { %>
+      ★
+    <% } else { %>
+      ☆
+    <% }; %>
+  </span>
+  <span data-id="3" class="score">
+    <% if (numStars >= 3) { %>
+      ★
+    <% } else { %>
+      ☆
+    <% }; %>
+  </span>
+  <span data-id="2" class="score">
+    <% if (numStars >= 2) { %>
+      ★
+    <% } else { %>
+      ☆
+    <% }; %>
+  </span>
+  <span data-id="1" class="score">
+    <% if (numStars >= 1) { %>
+      ★
+    <% } else { %>
+      ☆
+    <% }; %>
+  </span>
   </div>
 
   <br>

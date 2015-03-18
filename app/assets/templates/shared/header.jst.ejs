@@ -1,20 +1,31 @@
-<h3>FoodSpender</h3>
+<header class="header">
 
-<% if(LsFinalproject.currentUser.isSignedIn()) { %>
+  <nav class="header-nav group">
+    <h3>FoodSpender</h3>
 
-  <p>
-    Signed in as:
-    <a href="#users/<%= LsFinalproject.currentUser.id %>"><%= LsFinalproject.currentUser.escape("first_name") %></a> |
-    <a href="session/new" id="sign-out-link">Sign Out</a>
-  </p>
+    <ul>
+      <li>
+        Search <input type="text" value="">
+      </li>
+      
+      <li>
 
-<% } else { %>
+        <% if(LsFinalproject.currentUser.isSignedIn()) { %>
 
-  <p>
-    <a href="#users/new">Sign Up</a> |
-    <a href="#session/new">Sign In</a>
-  </p>
+          <p>
+            Signed in as:
+            <a href="#users/<%= LsFinalproject.currentUser.id %>"><%= LsFinalproject.currentUser.escape("first_name") %></a> |
+            <a href="session/new" id="sign-out-link">Sign Out</a>
+          </p>
 
-<% } %>
+        <% } %>
 
-<hr>
+      </li>
+    </ul>
+
+  </nav>
+
+</header>
+
+<!-- <hr> -->
+<!-- This causes grey line -->

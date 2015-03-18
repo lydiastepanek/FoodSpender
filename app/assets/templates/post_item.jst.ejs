@@ -9,7 +9,10 @@
 
 
 <img src="<%= post.escape('picture_url') %>"/>
+
 <li>Author: <%= post.escape('author_name') %></li>
+<img src="<%= post.escape('author_picture_url') %>"/>
+
 <li>Score: <%= post.escape('score_id') %></li>
 <li>Location: <%= post.escape('location') %></li>
 <li>Food Category: <%= post.get('food_type').title %></li>

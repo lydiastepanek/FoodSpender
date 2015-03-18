@@ -1,6 +1,8 @@
 LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   template: JST['post_item'],
 
+  tagName: 'li',
+
   events: {
     'click #like-button': 'likePost',
     'click #unlike-button': 'unlikePost',

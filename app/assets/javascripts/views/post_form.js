@@ -24,7 +24,8 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
   },
 
   render: function() {
-    var content = this.template({post: this.model});
+    var numStars = this.model.escape("score_id");
+    var content = this.template({post: this.model, numStars: numStars});
     this.$el.html(content);
     return this;
   },

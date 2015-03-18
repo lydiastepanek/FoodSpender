@@ -14,7 +14,7 @@ FoodSpender is a clone of myfitnesspal built on Rails and Backbone, used to trac
 - [x] View posts (and friends' posts) on newsfeed
 - [x] Comment on friends' food purchase posts
 - [x] Like friends' food purchase posts
-- [ ] Add friends
+- [x] Add friends
 - [x] View a feed of friend
 - [ ] Search for purchases by food type
 

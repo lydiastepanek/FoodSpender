@@ -16,7 +16,7 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
 
     this.collection.each(function (post) {
       var itemContent = new LsFinalproject.Views.PostsIndexItem({model: post});
-      this.$el.append(itemContent.render().$el);
+      this.$el.find(".content-main").append(itemContent.render().$el);
     }.bind(this))
     return this;
   }
