@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:new, :create, :destroy, :index, :show, :update]
     resources :ratings, only: :update
     resource :session, only: [:show, :create, :destroy]
+    resources :friendships, only: [:create]
+    delete 'friendships', :to => 'friendships#destroy'
   end
   resources :users, only: [:new, :create, :index, :show] do
     resources :friendships, only: [:create, :destroy]

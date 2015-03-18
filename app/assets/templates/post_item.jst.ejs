@@ -1,7 +1,9 @@
 <h1><%= post.escape('description') %></h1>
 
-<button id="delete-post" name="button">Delete Post</button>
-<a href='#/posts/<%= post.id %>/edit'>Edit Post</a>
+  <% if (post.get("owner_id") === LsFinalproject.currentUser.id) { %>
+    <button id="delete-post" name="button">Delete Post</button>
+    <a href='#/posts/<%= post.id %>/edit'>Edit Post</a>
+  <% } %>
 
 <ul>
 

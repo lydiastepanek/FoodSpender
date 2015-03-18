@@ -1,6 +1,11 @@
 LsFinalproject.Views.UserShow = Backbone.View.extend({
   template: JST['user_show'],
 
+  events: {
+    'click #add-friend': 'addFriend',
+    'click #remove-friend': 'removeFriend'
+  },
+
   initialize: function () {
     this.model.fetch();
     this.collection.fetch();
@@ -18,5 +23,36 @@ LsFinalproject.Views.UserShow = Backbone.View.extend({
     }.bind(this))
     return this;
   },
+
+  addFriend: function(event) {
+    var that = this;
+    $.ajax({
+      url: "api/friendships",
+      type: "POST",
+      data: {
+        user_id: this.model.id
+            },
+      dataType: "json",
+      success: function () {
+        that.model.fetch()
+      }
+    });
+  },
+
+  removeFriend: function(event) {
+    var that = this;
+    $.ajax({
+      url: "api/friendships",
+      type: "DELETE",
+      data: {
+        user_id: this.model.id,
+        friend_id: LsFinalproject.currentUser.id
+            },
+      dataType: "json",
+      success: function () {
+        that.model.fetch()
+      }
+    });
+  }
 
 })

@@ -33,11 +33,10 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
-    this.model.set('owner_id', LsFinalproject.current_user_id)
+    this.model.set('owner_id', LsFinalproject.currentUser.id)
     var that = this;
     this.model.save([], {
       success: function () {
-        console.log(this.model)
         that.collection.add(that.model)
         Backbone.history.navigate('', {trigger: true})
       }

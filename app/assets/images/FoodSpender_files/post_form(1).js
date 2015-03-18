@@ -33,7 +33,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
-    this.model.set('owner_id', LsFinalproject.current_user_id)
+    this.model.set('owner_id', LsFinalproject.currentUser.id)
     var that = this;
     this.model.save([], {
       success: function () {
@@ -59,7 +59,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
 
 	previewPic: function (src) {
 		this.$("#picture-preview").attr("src", src);
-	}  
+	}
 
 })
 ;

@@ -1,5 +1,13 @@
 <h1><%= user.escape('first_name') %> Posts</h1>
 
+<% if ((user.allFriends().findWhere({id: LsFinalproject.currentUser.id}) && (user.id !== LsFinalproject.currentUser.id))) { %>
+  <button id="remove-friend" name="button">Remove Friend</button>
+<% } else { %>
+  <button id="add-friend" name="button">Add Friend</button>
+<% } %>
+
+<br><a href="">Back to Posts Feed</a><br>
+
 <h2>Menu</h2>
 <ul>
 
@@ -19,7 +27,7 @@
 
     <% user.allFriends().each( function(friend) { %>
         <li>
-          <a href="#users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
+          <a href="#posts/users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
           <img src="<%= friend.escape('picture_url') %>"/>
         </li>
     <% }) %>

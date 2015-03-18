@@ -51,7 +51,7 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
 
   addLike: function() {
     var like = new LsFinalproject.Models.Like({
-      owner_id: LsFinalproject.current_user_id,
+      owner_id: LsFinalproject.currentUser.id,
       post_id: this.id})
     like.save({}, {
       success: function () {
@@ -67,7 +67,7 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
 
   addComment: function(content) {
     var comment = new LsFinalproject.Models.Comment({
-      owner_id: LsFinalproject.current_user_id,
+      owner_id: LsFinalproject.currentUser.id,
       post_id: this.id,
       content: content
     });

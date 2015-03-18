@@ -18,9 +18,8 @@ LsFinalproject.Views.NewPost = Backbone.View.extend({
     event.preventDefault
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
-    this.model.set('owner_id', LsFinalproject.current_user_id)
+    this.model.set('owner_id', LsFinalproject.currentUser.id)
     var that = this;
-    // (:score_id, :food_id, :price, :description)
     this.model.save([], {
       success: function () {
         that.collection.add(that.model)
