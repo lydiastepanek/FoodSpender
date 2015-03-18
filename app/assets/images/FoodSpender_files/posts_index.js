@@ -22,3 +22,4 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
   }
 
 })
+;

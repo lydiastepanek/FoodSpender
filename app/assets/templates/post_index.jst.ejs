@@ -17,7 +17,7 @@
 
     <% users.each( function(friend) { %>
         <li>
-          <a href="#users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
+          <a href="#posts/users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
           <img src="<%= friend.escape('picture_url') %>"/>
         </li>
     <% }) %>

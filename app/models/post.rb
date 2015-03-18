@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   validates :owner_id, :food_id, :food_type, :price, :description, presence: true
   validates :description, uniqueness: {scope: :owner_id, message: "must be different for every post" }
 
-  has_attached_file :picture, default_url: "user_picture.png", :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :picture, default_url: "food.jpeg", :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   belongs_to(

@@ -37,7 +37,6 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
     var that = this;
     this.model.save([], {
       success: function () {
-        console.log(this.model)
         that.collection.add(that.model)
         Backbone.history.navigate('', {trigger: true})
       }
@@ -60,6 +59,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
 
 	previewPic: function (src) {
 		this.$("#picture-preview").attr("src", src);
-	}
+	}  
 
 })
+;

@@ -23,12 +23,6 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
     return this._ratings
   },
 
-  toJSON: function () {
-    return {
-      post: _.clone(this.attributes)
-    };
-  },
-
   parse: function (response) {
   if (response.likes) {
     this.likes().set(response.likes);
@@ -79,3 +73,4 @@ LsFinalproject.Models.Post = Backbone.Model.extend({
   }
 
 })
+;

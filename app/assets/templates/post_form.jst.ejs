@@ -1,4 +1,8 @@
-<h1>New Post</h1>
+<% if (post.isNew()) { %>
+  <h1>New Post</h1>
+<% } else { %>
+  <h1>Edit Post</h1>
+<% }; %>
 
 <form>
 

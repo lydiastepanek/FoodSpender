@@ -30,13 +30,13 @@ module Api
     def update
       @post = Post.find(params[:id])
       @post.update(post_params)
-      render json: @post
+      render :show
     end
 
     private
 
     def post_params
-      params.require(:post).permit(:score_id, :food_id, :price, :description, :owner_id, :location, :num_meals)
+      params.require(:post).permit(:created_at, :score_id, :food_id, :price, :description, :owner_id, :location, :num_meals, :picture)
     end
 
   end

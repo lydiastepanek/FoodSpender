@@ -1,7 +1,7 @@
 <h1>Sign Up</h1>
 
 
-<form action="/users" method="post">
+<form action="/users" method="post" enctype="multipart/form-data">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
 
@@ -17,8 +17,16 @@
 
   <label for="lastname">Last Name</label>
   <input id="lastname" type="text" name="user[last_name]">
+  <br>
+
+  <label for="picture">Picture</label>
+  <input id="picture" type="file" name="user[picture]">
 
   <br>
   <button>Submit</button>
+
+  <br>
+  <br>
+  Already a User? <a href="/session/new">Sign in.</a>
 
 </form>
