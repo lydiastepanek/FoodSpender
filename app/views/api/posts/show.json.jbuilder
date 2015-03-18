@@ -6,7 +6,10 @@ json.extract! @post,
               :num_meals,
               :description,
               :food_id,
-              :score_id
+              :score_id,
+              :created_at
+
+json.picture_url image_url(@post.picture.url)
 
 json.food_type @post.food_type
 json.author_name @post.author.first_name + ' ' + @post.author.last_name

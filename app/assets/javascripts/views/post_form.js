@@ -11,6 +11,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
   events: {
     'submit': 'createPost',
     'click .score': 'saveScore',
+		"change #input-picture-file": "changePicture"
   },
 
   saveScore: function(event) {
@@ -40,6 +41,24 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
         Backbone.history.navigate('', {trigger: true})
       }
     })
-  }
+  },
+
+  changePicture: function (event) {
+		var file = event.currentTarget.files[0];
+
+		var fileReader = new FileReader();
+
+		var that = this;
+		fileReader.onloadend = function () {
+			that.model.set("picture", fileReader.result);
+			that.previewPic(fileReader.result);
+		};
+
+		fileReader.readAsDataURL(file);
+	},
+
+	previewPic: function (src) {
+		this.$("#picture-preview").attr("src", src);
+	}  
 
 })

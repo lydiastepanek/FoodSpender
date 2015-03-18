@@ -39,6 +39,7 @@ LsFinalproject.Views.UsersForm = Backbone.View.extend({
   },
 
   changePicture: function(event) {
+    event.preventDefault();
     var file = event.currentTarget.files[0];
     var fileReader = new FileReader();
     var that = this;
@@ -50,6 +51,7 @@ LsFinalproject.Views.UsersForm = Backbone.View.extend({
   },
 
   previewPic: function (src) {
+    event.preventDefault();
 		this.$("#picture-preview").attr("src", src);
   }
 

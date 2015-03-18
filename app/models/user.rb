@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
   )
 
   def all_friends
-    # (friends.concat(inverse_friends))
     (self.friends + self.inverse_friends).uniq
   end
 

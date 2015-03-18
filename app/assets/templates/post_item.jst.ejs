@@ -5,13 +5,14 @@
 
 <ul>
 
+
+<img src="<%= post.escape('picture_url') %>"/>
 <li>Author: <%= post.escape('author_name') %></li>
 <li>Score: <%= post.escape('score_id') %></li>
 <li>Location: <%= post.escape('location') %></li>
 <li>Food Category: <%= post.get('food_type').title %></li>
 <li>Price: $<%= post.escape('price') %></li>
 <li>Quantity of meals: <%= post.escape('num_meals') %></li>
-<li>INSERT PICTURE HERE</li>
 <li>Likes: <%= post.likes().length %></li>
 
 <% if (post.get("is_liked_by_current_user")) { %>

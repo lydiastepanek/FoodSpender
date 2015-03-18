@@ -12,15 +12,16 @@
   </li>
 
   <li>
-  Friends
+  All Users
     <ul>
 
-    <% _.each(LsFinalproject.current_user_friends, function(friend) { %>
+    <% users.each( function(friend) { %>
         <li>
-          <a href="#users/<%=friend.id%>"><%= friend.first_name + ' ' + friend.last_name %></a>
-          INSERT PICTURE HERE
+          <a href="#users/<%=friend.id%>"><%= friend.get("first_name") + ' ' + friend.get("last_name") %></a>
+          <img src="<%= friend.escape('picture_url') %>"/>
         </li>
     <% }) %>
+
   </ul>
   </li>
 

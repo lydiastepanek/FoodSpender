@@ -6,6 +6,8 @@ json.array! @users do |user|
                 :first_name,
                 :last_name
 
+  json.picture_url image_url(user.picture.url)
+
   json.posts user.posts do |post|
     json.id post.id
     json.owner_id post.owner_id
@@ -52,6 +54,7 @@ json.array! @users do |user|
     json.email friend.email
     json.first_name friend.first_name
     json.last_name friend.last_name
+    json.picture_url image_url(friend.picture.url)
   end
 
 end

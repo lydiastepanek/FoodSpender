@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'root#root'
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:show, :index]
+    resources :users, only: [:show, :index, :create]
     resources :likes, only: [:update, :destroy, :create]
     resources :comments, only: [:update, :create, :destroy]
     resources :posts, only: [:new, :create, :destroy, :index, :show, :update]

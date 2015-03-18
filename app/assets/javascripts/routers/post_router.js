@@ -5,10 +5,10 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   },
 
   routes: {
-    'api/posts': 'index',
-    'api/posts/new': 'newPost',
-    'api/posts/:id/edit': 'editPost',
-    'api/posts/users/:id': 'userShow'
+    'posts': 'index',
+    'posts/new': 'newPost',
+    'posts/:id/edit': 'editPost',
+    'posts/users/:id': 'userShow'
   },
 
   editPost: function (id) {
@@ -24,7 +24,7 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   },
 
   index: function () {
-    var indexView = new LsFinalproject.Views.PostsIndex({collection: LsFinalproject.posts})
+    var indexView = new LsFinalproject.Views.PostsIndex({collection: LsFinalproject.posts, users: LsFinalproject.users})
     this.switchView(indexView)
   },
 

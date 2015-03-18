@@ -2,7 +2,11 @@ LsFinalproject.Collections.Posts = Backbone.Collection.extend({
 
   url: 'api/posts',
 
-  model: LsFinalproject.Models.Post ,
+  model: LsFinalproject.Models.Post,
+
+  comparator: function(post) {
+    return post.get('created_at');
+  },
 
   getOrFetch: function(id) {
     var model = this.get(id);
