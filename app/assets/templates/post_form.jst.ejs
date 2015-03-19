@@ -1,84 +1,91 @@
-<% if (post.isNew()) { %>
-  <h1>New Post</h1>
-<% } else { %>
-  <h1>Edit Post</h1>
-<% }; %>
+<div class="modal is-open">
 
-<a href="">Back to Posts Feed</a><br>
+      <% if (post.isNew()) { %>
+        <h1>New Post</h1>
+      <% } else { %>
+        <h1>Edit Post</h1>
+      <% }; %>
 
-<form>
+      <a href="">Back to Posts Feed</a><br>
 
-  <label for="description">Description</label>
-  <input id="description" type="text" name="description" value="<%= post.escape('description') %>">
+    <form class="modal-form">
 
-  <br>
-  <label for="location">Location</label>
-  <input id="location" type="text" name="location" value="<%= post.escape('location') %>">
+      <span class="modal-close js-modal-close">&times;</span>
 
-  <br>
+      <label for="description">Description</label>
+      <input id="description" type="text" name="description" value="<%= post.escape('description') %>">
 
-  <label for="food_id">Food Type</label>
-  <select id="food_id" name="food_id">
-      <% _.each(LsFinalproject.all_food_types, function(foodType) { %>
-          <option value="<%= foodType.id %>">
-            <%= foodType.title %>
-          </option>
-      <% }) %>
-  </select>
+      <br>
+      <label for="location">Location</label>
+      <input id="location" type="text" name="location" value="<%= post.escape('location') %>">
 
-  <br>
-  <label for="price">Price</label>
-  <input id="price" type="decimal" name="price"  value="<%= post.escape('price') %>" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$">
+      <br>
 
-  <br>
-  <label for="score_id">Score</label>
-  <div id="score_id" class="rating">
-  <span data-id="5" class="score">
-    <% if (numStars >= 5) { %>
-      ★
-    <% } else { %>
-      ☆
-    <% }; %>
-  </span>
-  <span data-id="4" class="score">
-    <% if (numStars >= 4) { %>
-      ★
-    <% } else { %>
-      ☆
-    <% }; %>
-  </span>
-  <span data-id="3" class="score">
-    <% if (numStars >= 3) { %>
-      ★
-    <% } else { %>
-      ☆
-    <% }; %>
-  </span>
-  <span data-id="2" class="score">
-    <% if (numStars >= 2) { %>
-      ★
-    <% } else { %>
-      ☆
-    <% }; %>
-  </span>
-  <span data-id="1" class="score">
-    <% if (numStars >= 1) { %>
-      ★
-    <% } else { %>
-      ☆
-    <% }; %>
-  </span>
-  </div>
+      <label for="food_id">Food Type</label>
+      <select id="food_id" name="food_id">
+          <% _.each(LsFinalproject.all_food_types, function(foodType) { %>
+              <option value="<%= foodType.id %>">
+                <%= foodType.title %>
+              </option>
+          <% }) %>
+      </select>
 
-  <br>
-  <label for="qty">Quantity of meals provided</label>
-  <input id="qty" type="number"  value="<%= post.escape('num_meals') %>" name="num_meals">
+      <br>
+      <label for="price">Price</label>
+      <input id="price" type="decimal" name="price"  value="<%= post.escape('price') %>" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$">
 
-  <br>
-  <label for="input-picture-file">Picture</label>
-	<input id="input-picture-file" type="file" name="picture">
+      <br>
+      <label for="score_id">Score</label>
+      <div id="score_id" class="rating">
+      <span data-id="5" class="score">
+        <% if (numStars >= 5) { %>
+          ★
+        <% } else { %>
+          ☆
+        <% }; %>
+      </span>
+      <span data-id="4" class="score">
+        <% if (numStars >= 4) { %>
+          ★
+        <% } else { %>
+          ☆
+        <% }; %>
+      </span>
+      <span data-id="3" class="score">
+        <% if (numStars >= 3) { %>
+          ★
+        <% } else { %>
+          ☆
+        <% }; %>
+      </span>
+      <span data-id="2" class="score">
+        <% if (numStars >= 2) { %>
+          ★
+        <% } else { %>
+          ☆
+        <% }; %>
+      </span>
+      <span data-id="1" class="score">
+        <% if (numStars >= 1) { %>
+          ★
+        <% } else { %>
+          ☆
+        <% }; %>
+      </span>
+      </div>
 
-    <br>
-  <button>Submit</button>
+      <br>
+      <label for="qty">Quantity of meals provided</label>
+      <input id="qty" type="number"  value="<%= post.escape('num_meals') %>" name="num_meals">
 
-</form>
+      <br>
+      <label for="input-picture-file">Picture</label>
+    	<input id="input-picture-file" type="file" name="picture">
+
+        <br>
+      <button>Submit</button>
+
+    </form>
+
+  <div class="modal-screen js-modal-close"></div>
+</div>

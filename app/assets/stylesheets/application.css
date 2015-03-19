@@ -118,7 +118,7 @@ header {
  float: left;
  display: block;
  font-size: 36px;
- padding: 20px;
+ padding: 25px;
  border-right: 1px solid #aaa;
 }
 
@@ -262,25 +262,24 @@ body {
 }
 
 .content-main {
-  margin: 0px 0px 20px 0px;
 }
 
 .content-main h1 {
   font-size: 36px;
   text-align: left;
   float: left;
-  display: block;
 }
 
 #remove-friend, #add-friend{
-  /*margin: 60px 0px;*/
   font-size: 16px;
-  background: red;
+  padding: 10px;
+  /*float: left;*/
+  /*background: red;*/
 }
 
 #content-main-a{
   font-size: 16px;
-  background: red;
+  /*background: red;*/
 }
 
 /* --- CONTENT MAIN POSTS --- */
@@ -331,11 +330,7 @@ body {
   padding: 10px;
 }
 
-/*<button id="delete-post" name="button">Delete Post</button>
-<a href='#/posts/<%= post.id %>/edit'>Edit Post</a>*/
-
 .content-main a, h1, #delete-post {
-  float: left;
   display: block;
   margin: 5px;
 }
@@ -347,7 +342,7 @@ body {
 .content-main #post-image {
   float: right;
   width: 200px;
-  height: auto:
+  height: auto;
 }
 
 .content-main .post-main ul {
@@ -385,6 +380,67 @@ body {
 .content-main .comments li {
   margin: 2px 0px 0px 0px;
 }
+
+/* --- MODAL --- */
+
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal-screen {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.modal-form {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -220px;
+  width: 360px;
+  padding: 20px;
+  background: #fff;
+  z-index: 3;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #f00;
+}
+
+.modal-form > h1 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.modal-form > p {
+  margin: 0 0 20px 0;
+}
+
+
+
+
+
 
 
 

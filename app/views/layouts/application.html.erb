@@ -16,7 +16,7 @@
 
       <ul>
         <li>
-          Search <input type="text" value="">
+        <form>Search <input type="text"></form>
         </li>
 
         <li>
@@ -25,8 +25,10 @@
 
             <p>
               Signed in as:
-              <a href="#posts/users/<%= current_user.id %>"><%= current_user.first_name %></a> |
+              <a href="#posts/users/<%= current_user.id %>"><%= current_user.first_name %></a>
+              <button>
               <%= button_to "Sign Out", api_session_url, method: :delete %>
+              </button>
             </p>
 
           <% end %>

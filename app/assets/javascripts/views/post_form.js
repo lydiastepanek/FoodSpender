@@ -32,6 +32,8 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
 
   createPost: function(event) {
     event.preventDefault();
+    $(event.currentTarget).find("button").html("Submitting")
+    $(event.currentTarget).find("button").prop("disabled", true)
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs)
     this.model.set('owner_id', LsFinalproject.currentUser.id)
