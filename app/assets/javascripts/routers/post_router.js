@@ -14,13 +14,13 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
   editPost: function (id) {
     var post = LsFinalproject.posts.getOrFetch(id)
     var newView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: post})
-    this.switchViewModal(newView)
+    this.switchView(newView)
   },
 
   newPost: function () {
     var post = new LsFinalproject.Models.Post;
     var newView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: post})
-    this.switchViewModal(newView)
+    this.switchView(newView)
   },
 
   index: function () {
@@ -38,13 +38,6 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.append(view.render().$el)
-  },
-
-  switchViewModal: function (view) {
-    this._currentView && this._currentView.remove();
-    this._currentView = view;
-    this.$rootEl.parent().append(view.render().$el)
-    $("body").find(".modal").addClass("is-open");
   }
 
 })

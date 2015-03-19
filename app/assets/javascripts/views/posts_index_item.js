@@ -8,7 +8,15 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
     'click #unlike-button': 'unlikePost',
     'click #comment-button': 'commentPost',
     'click #uncomment-button': 'uncommentPost',
-    'click #delete-post': 'deletePost'
+    'click #delete-post': 'deletePost',
+    'click #edit-post': 'postForm',
+  },
+
+  postForm: function() {
+    event.preventDefault();
+    var editView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: this.model})
+    $("body").append(editView.render().$el)
+    $("body").find(".modal").addClass("is-open");
   },
 
   deletePost: function () {

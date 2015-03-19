@@ -1,7 +1,5 @@
 LsFinalproject.Views.PostForm = Backbone.View.extend({
 
-  tagName: 'form',
-
   template: JST['post_form'],
 
   initialize: function () {
@@ -34,7 +32,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
     event.preventDefault();
     $(event.currentTarget).find("button").html("Submitting")
     $(event.currentTarget).find("button").prop("disabled", true)
-    var attrs = this.$el.serializeJSON();
+    var attrs = $(".modal-form").serializeJSON();
     this.model.set(attrs)
     this.model.set('owner_id', LsFinalproject.currentUser.id)
     var that = this;

@@ -1,14 +1,12 @@
-<div class="modal is-open">
-
-      <% if (post.isNew()) { %>
-        <h1>New Post</h1>
-      <% } else { %>
-        <h1>Edit Post</h1>
-      <% }; %>
-
-      <a href="">Back to Posts Feed</a><br>
+<div class="modal">
 
     <form class="modal-form">
+
+            <% if (post.isNew()) { %>
+              <h1>New Post</h1>
+            <% } else { %>
+              <h1>Edit Post</h1>
+            <% }; %>
 
       <span class="modal-close js-modal-close">&times;</span>
 

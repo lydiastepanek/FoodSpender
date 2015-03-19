@@ -107,6 +107,11 @@ header {
   border-bottom: 1px solid #aaa;
 }
 
+.header input {
+  color: #000;
+  text-align: left;
+}
+
 .header-nav {
   margin: auto;
   width: 900px;
