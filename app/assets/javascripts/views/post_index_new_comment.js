@@ -1,6 +1,6 @@
 LsFinalproject.Views.PostsIndexNewComment = Backbone.View.extend({
 
-  tagName: 'form',
+  tagName: 'li',
 
   template: JST['new_comment'],
 

@@ -16,10 +16,11 @@
 
 /* --- RESET --- */
 
+/*button*/
 html, body, header, nav, h1, ul, li, h3,
 strong, main, section, img, div, h2, p, a,
 form, fieldset, label, input, textarea,
-button, article, footer, small {
+article, footer, small {
  margin: 0;
  padding: 0;
  border: 0;
@@ -33,6 +34,12 @@ button, article, footer, small {
  background: transparent;
 }
 
+button {
+  border-radius: 10px;
+  background: #ccc;
+  padding: 5px;
+}
+
 ul {
  list-style: none;
 }
@@ -41,11 +48,11 @@ a:hover {
   color: blue;
 }
 
-/*img {
+img {
   display: block;
   width: 100%;
   height: auto;
-}*/
+}
 
 input,
 button,
@@ -118,7 +125,7 @@ header {
 }
 
 .header-nav li {
- padding: 5px 0px 0px 0px;
+ padding: 10px 0px 0px 0px;
 }
 
 .header-nav input[type="text"] {
@@ -148,13 +155,13 @@ body {
 
 .content-sidebar {
   float: right;
-  width: 300px;
+  width: 200px;
   padding: 20px;
 }
 
 .content-main {
   float: left;
-  width: 520px;
+  width: 620px;
   padding: 20px 20px 20px 19px;
   border-right: 1px solid #aaa;
 }
@@ -163,23 +170,20 @@ body {
 
 .content-sidebar > h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .profile-nav {
-  margin: 20px 0px 50px 0px;
+  margin: 20px 0px 10px 0px;
 }
 
 .profile-nav > li {
-  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #aaa;
   display: block;
-  padding: 5px;
+  padding: 10px 5px;
   font-weight: bold;
 }
 
-.profile-nav > li:first-child {
-  border-top: 1px solid #aaa;
-}
 
 /* --- THUMBS --- */
 
@@ -249,32 +253,134 @@ body {
 
 /* --- CONTENT MAIN --- */
 
-.content-main > .content-header {
+.content-main .post-item-group {
+  /*background: red;*/
+}
+
+.content-main {
+  margin: 0px 0px 20px 0px;
+}
+
+.content-main h1 {
   font-size: 36px;
   text-align: left;
   float: left;
   display: block;
 }
 
-.content-main > li {
+#remove-friend, #add-friend{
+  /*margin: 60px 0px;*/
+  font-size: 16px;
   background: red;
-  float: left;
-  width: 520px;
-  margin: 0px 0px 20px 0px;
 }
 
+#content-main-a{
+  font-size: 16px;
+  background: red;
+}
 
+/* --- CONTENT MAIN POSTS --- */
 
+.content-main > li {
+  float: left;
+  width: 620px;
+  margin: 0px 0px 40px 0px;
+}
 
+.content-main .post-author-info {
+  float: left;
+  width: 100px;
+}
 
+.content-main #author-image {
+  margin: 50px 0px 10px 0px;
+  border: 1px solid #000;
+  width: 58px;
+  height: auto;
+  border-radius: 5px 5px;
+  display: block;
+}
 
+.content-main .likes {
+  float: right;
+  background: #098716;
+  border: 5px solid #ccc;
+  width: 50px;
+  text-align: center;
+  height: auto;
+  padding: 15px 5px 10px 5px;
+  border-radius: 100%;
+  display: block;
+  color: #fff;
+}
 
+.content-main .post-center {
+  margin: auto;
+  width: 450px;
+  /*border: 1px solid #aaa;*/
+}
 
+.content-main .post-main {
+  border: 3px solid #000;
+  background: #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
 
+/*<button id="delete-post" name="button">Delete Post</button>
+<a href='#/posts/<%= post.id %>/edit'>Edit Post</a>*/
 
+.content-main a, h1, #delete-post {
+  float: left;
+  display: block;
+  margin: 5px;
+}
 
+.content-main h1{
+  font-weight: bold;
+}
 
+.content-main #post-image {
+  float: right;
+  width: 200px;
+  height: auto:
+}
 
+.content-main .post-main ul {
+  float: left;
+}
+
+.content-main .post-main li {
+  margin: 2px 0px 0px 0px;
+}
+
+.content-main .comments {
+  border: 3px solid #000;
+  float: right;
+  margin: -20px -40px 0px 0px;
+  width: 390px;
+  background: #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.content-main #comment-header {
+  font-weight: bold;
+}
+
+.content-main .comments ul {
+  float: left;
+}
+
+.content-main .comments ul textarea {
+  background: #fff;
+  height: 100px;
+  border: 1px solid #aaa;
+}
+
+.content-main .comments li {
+  margin: 2px 0px 0px 0px;
+}
 
 
 

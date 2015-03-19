@@ -16,10 +16,12 @@ LsFinalproject.Views.UserShow = Backbone.View.extend({
   render: function() {
     var showContent = this.template({user: this.model});
     this.$el.html(showContent);
+
     var userPosts = this.collection.where({owner_id: this.model.id});
     _.each(userPosts, function (post) {
       var itemContent = new LsFinalproject.Views.PostsIndexItem({model: post});
-      this.$el.append(itemContent.render().$el);
+      // this.$el.append(itemContent.render().$el);
+      this.$el.find(".content-main").append(itemContent.render().$el);
     }.bind(this))
     return this;
   },

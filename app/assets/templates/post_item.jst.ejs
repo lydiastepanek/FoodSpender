@@ -1,47 +1,78 @@
-<h1><%= post.escape('description') %></h1>
+<div class="post-item-group group">
 
-  <% if (post.get("owner_id") === LsFinalproject.currentUser.id) { %>
-    <button id="delete-post" name="button">Delete Post</button>
-    <a href='#/posts/<%= post.id %>/edit'>Edit Post</a>
-  <% } %>
+  <section class="post-author-info">
 
-<ul>
+    <a href="#posts/users/<%=post.escape('owner_id')%>">
+      <img src="<%= post.escape('author_picture_url') %>" id="author-image"/>
+    </a>
+    <div id="author-name"><%= post.escape('author_name') %></div>
+
+  </section>
+
+  <section class="likes">
+
+    <div>Likes: <%= post.likes().length %></div>
+
+  </section>
+
+  <section class="post-center group">
+
+    <div class="post-main group">
+
+      <% if (post.get("owner_id") === LsFinalproject.currentUser.id) { %>
+        <button id="delete-post" name="button">Delete Post</button><br>
+        <a href='#/posts/<%= post.id %>/edit'>Edit Post</a><br>
+      <% } %>
+
+      <h1>
+        <%= post.escape('description') %>
+      </h1>
+
+      <section id="post-image">
+
+        <img src="<%= post.escape('picture_url') %>"/>
+
+      </section>
+
+      <ul>
+      <li>Score: <%= post.escape('score_id') %></li>
+      <li>Food Category: <%= post.get('food_type').title %></li>
+      <li>Location: <%= post.escape('location') %></li>
+      <li>Price: $<%= post.escape('price') %></li>
+      <li>Quantity of meals: <%= post.escape('num_meals') %></li>
+      <% if (post.get("is_liked_by_current_user")) { %>
+        <button id="unlike-button" name="button" data-id="<%= post.get('like_of_current_user') %>">Unlike</button>
+      <% } else { %>
+        <button id="like-button" name="button">Like</button>
+      <% } %>
+      </ul>
+
+    </div>
+
+      <section class="comments">
+
+        <h3 id="comment-header">Comments:</h3>
+
+        <ul>
+        <% post.comments().each(function (comment) { %>
+          <li>
+          <%= comment.get("author_name") %>:
+          <%= comment.escape("content") %>
+          <% if (comment.get("is_written_by_current_user")) { %>
+            <button id="uncomment-button" name="button" data-id="<%= comment.id %>">Remove Comment</button>
+          <% } %>
+          </li>
+        <% }) %>
+
+          <li>
+            <button id="comment-button" name="button">Add Comment</button>
+          </li>
+
+        </ul>
+
+      </section>
+
+  </section>
 
 
-<img src="<%= post.escape('picture_url') %>"/>
-
-<li>Author: <%= post.escape('author_name') %></li>
-<img src="<%= post.escape('author_picture_url') %>"/>
-
-<li>Score: <%= post.escape('score_id') %></li>
-<li>Location: <%= post.escape('location') %></li>
-<li>Food Category: <%= post.get('food_type').title %></li>
-<li>Price: $<%= post.escape('price') %></li>
-<li>Quantity of meals: <%= post.escape('num_meals') %></li>
-<li>Likes: <%= post.likes().length %></li>
-
-<% if (post.get("is_liked_by_current_user")) { %>
-  <button id="unlike-button" name="button" data-id="<%= post.get('like_of_current_user') %>">Unlike</button>
-<% } else { %>
-  <button id="like-button" name="button">Like</button>
-<% } %>
-
-<li>Comments:
-
-  <ul>
-  <% post.comments().each(function (comment) { %>
-    <li>
-    <%= comment.get("author_name") %>:
-    <%= comment.escape("content") %>
-    <% if (comment.get("is_written_by_current_user")) { %>
-      <button id="uncomment-button" name="button" data-id="<%= comment.id %>">Remove Comment</button>
-    <% } %>
-    </li>
-  <% }) %>
-  </ul>
-
-</li>
-
-<button id="comment-button" name="button">Add Comment</button>
-
-</ul>
+</div>
