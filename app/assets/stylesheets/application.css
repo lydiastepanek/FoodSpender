@@ -44,7 +44,11 @@ ul {
  list-style: none;
 }
 
-a:hover {
+a {
+  color: #0c0;
+}
+
+button:hover, a:hover {
   color: blue;
 }
 

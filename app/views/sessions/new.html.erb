@@ -1,20 +1,27 @@
-<h1>Sign In</h1>
+<section class="content">
 
+  <ul class="content-main group">
+    <%= flash[:errors] %>
 
-<form action="/session" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <h1 class="content-header">Sign In</h1>
 
-  <label for="email">Email</label>
-  <input id="email" type="text" name="user[email]">
+      <form action="/session" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="user[password]">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="user[email]">
 
-  <button>Submit</button>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="user[password]">
 
-  <br>
-  <br>
-  Don't have an account? <a href="/users/new">Sign up.</a>
+        <button>Submit</button>
 
+        <br>
+        <br>
+        Don't have an account? <a href="/users/new">Sign up.</a>
 
-</form>
+      </form>
+
+  </ul>
+
+</section>

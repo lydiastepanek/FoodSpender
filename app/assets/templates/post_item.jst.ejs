@@ -4,8 +4,8 @@
 
     <a href="#posts/users/<%=post.escape('owner_id')%>">
       <img src="<%= post.escape('author_picture_url') %>" id="author-image"/>
+      <div id="author-name"><%= post.escape('author_name') %></div>
     </a>
-    <div id="author-name"><%= post.escape('author_name') %></div>
 
   </section>
 

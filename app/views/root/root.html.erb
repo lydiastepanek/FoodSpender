@@ -1,8 +1,3 @@
-<div id="header">
-<h1>FoodSpending App</h1>
-flash[:errors]
-</div>
-
 <script>
 $(document).ready(function(){
   LsFinalproject.all_food_types = <%= Foodtype.all.to_json.html_safe %>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%=  flash.now[:errors] %>
 
   <title>FoodSpender</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
@@ -9,6 +8,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <header class="header">
+
+    <nav class="header-nav group">
+      <h3>FoodSpender</h3>
+
+      <ul>
+        <li>
+          Search <input type="text" value="">
+        </li>
+
+        <li>
+
+          <% if current_user %>
+
+            <p>
+              Signed in as:
+              <a href="#posts/users/<%= current_user.id %>"><%= current_user.first_name %></a> |
+              <%= button_to "Sign Out", api_session_url, method: :delete %>
+            </p>
+
+          <% end %>
+
+        </li>
+      </ul>
+
+    </nav>
+
+  </header>
 
 <%= yield %>
 

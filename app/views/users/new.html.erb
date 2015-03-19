@@ -1,32 +1,39 @@
-<h1>Sign Up</h1>
+<section class="content">
+
+  <ul class="content-main group">
+    <h1 class="content-header">Sign Up</h1>
+      <%= flash[:errors] %>
+      
+        <form action="/users" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
 
-<form action="/users" method="post" enctype="multipart/form-data">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <label for="email">Email</label>
+          <input id="email" type="text" name="user[email]">
 
+          <label for="password">Password</label>
+          <input id="password" type="password" name="user[password]">
+          <br>
 
-  <label for="email">Email</label>
-  <input id="email" type="text" name="user[email]">
+          <label for="firstname">First Name</label>
+          <input id="firstname" type="text" name="user[first_name]">
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="user[password]">
-  <br>
+          <label for="lastname">Last Name</label>
+          <input id="lastname" type="text" name="user[last_name]">
+          <br>
 
-  <label for="firstname">First Name</label>
-  <input id="firstname" type="text" name="user[first_name]">
+          <label for="picture">Picture</label>
+          <input id="picture" type="file" name="user[picture]">
 
-  <label for="lastname">Last Name</label>
-  <input id="lastname" type="text" name="user[last_name]">
-  <br>
+          <br>
+          <button>Submit</button>
 
-  <label for="picture">Picture</label>
-  <input id="picture" type="file" name="user[picture]">
+          <br>
+          <br>
+          Already a User? <a href="/session/new">Sign in.</a>
 
-  <br>
-  <button>Submit</button>
+        </form>
 
-  <br>
-  <br>
-  Already a User? <a href="/session/new">Sign in.</a>
+  </ul>
 
-</form>
+</section>

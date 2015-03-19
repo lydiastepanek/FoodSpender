@@ -23,6 +23,6 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     sign_out!
-    render json: {}
+    redirect_to new_session_url
   end
 end
