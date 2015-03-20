@@ -11,6 +11,7 @@ LsFinalproject.Views.UserShow = Backbone.View.extend({
     this.collection.fetch();
     this.listenTo(this.model, 'sync', this.render)
     this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.model.allFriends(), 'sync', this.render)
   },
 
   render: function() {

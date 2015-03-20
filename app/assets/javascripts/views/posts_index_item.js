@@ -57,6 +57,7 @@ LsFinalproject.Views.PostsIndexItem = Backbone.View.extend({
   },
 
   commentPost: function() {
+    this.$el.find("#comment-button").hide();
     var commentContent = new LsFinalproject.Views.PostsIndexNewComment({model: this.model});
     this.$el.find(".comments ul").append(commentContent.render().$el);
   },

@@ -20,6 +20,7 @@ Comment.delete_all
 Like.delete_all
 Friendship.delete_all
 
+u0 = User.create!(email: "guest.user@example.com", password: "guestguest", first_name: "Guest", last_name: "User", picture: File.open("#{Rails.root}/app/assets/images/user_picture.png"))
 u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", picture: File.open("#{Rails.root}/app/assets/images/valerie.jpg"))
 u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/james.jpeg"))
 u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/bret.jpeg"))
@@ -142,19 +143,19 @@ p2 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 3
 p3 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 17, description: "Groceries Friday")
 p4 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 18, description: "Groceries Sunday")
 
-p5 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine for St. Patty's")
-p6 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine because UGH")
-p7 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 120.90, num_meals: 1, description: "Wine cooler Wednesday")
-p8 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine Day4")
+p5 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine for St. Patty's", picture: File.open("#{Rails.root}/app/assets/images/wine1.gif"))
+p6 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine because UGH", picture: File.open("#{Rails.root}/app/assets/images/wine2.jpg"))
+p7 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 120.90, num_meals: 1, description: "Wine cooler Wednesday", picture: File.open("#{Rails.root}/app/assets/images/wine3.jpg"))
+p8 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine Day4", picture: File.open("#{Rails.root}/app/assets/images/wine4.png"))
 
-p9 = u5.posts.create!(food_id: f77.id, location: "Carmine's", score_id: 4, price: 4, num_meals: 1, description: "Pizza for breakfast")
-p10 = u5.posts.create!(food_id: f69.id, location: 'Taco Bell', score_id: 4, price: 7, num_meals: 1, description: "Tacos Mmmmmmm")
-p11 = u5.posts.create!(food_id: f57.id, location: 'Hampton Dosa', score_id: 4, price: 11, num_meals: 1, description: "Dosa Today!")
-p12 = u5.posts.create!(food_id: f57.id, location: 'Indian Palace', score_id: 4, price: 20.10, num_meals: 1, description: "Indian Lunch")
+p9 = u5.posts.create!(food_id: f77.id, location: "Carmine's", score_id: 4, price: 4, num_meals: 1, description: "Pizza for breakfast", picture: File.open("#{Rails.root}/app/assets/images/pizza.JPG"))
+p10 = u5.posts.create!(food_id: f69.id, location: 'Taco Bell', score_id: 4, price: 7, num_meals: 1, description: "Tacos Mmmmmmm", picture: File.open("#{Rails.root}/app/assets/images/taco.jpeg"))
+p11 = u5.posts.create!(food_id: f57.id, location: 'Hampton Dosa', score_id: 4, price: 11, num_meals: 1, description: "Dosa Today!", picture: File.open("#{Rails.root}/app/assets/images/dosa.jpg"))
+p12 = u5.posts.create!(food_id: f57.id, location: 'Indian Palace', score_id: 4, price: 20.10, num_meals: 1, description: "Indian Lunch", picture: File.open("#{Rails.root}/app/assets/images/indian.jpeg"))
 
-p13 = u3.posts.create!(food_id: f97.id, location: 'Barcelona', score_id: 5, price: 60.10, num_meals: 1, description: "Top-notch Tapas")
+p13 = u3.posts.create!(food_id: f97.id, location: 'Barcelona', score_id: 5, price: 60.10, num_meals: 1, description: "Top-notch Tapas", picture: File.open("#{Rails.root}/app/assets/images/tapas.jpg"))
 
-p14 = u4.posts.create!(food_id: f90.id, location: 'Soup Heaven', score_id: 1, price: 2, num_meals: 2, description: "Soup that is soupy")
+p14 = u4.posts.create!(food_id: f90.id, location: 'Soup Heaven', score_id: 1, price: 2, num_meals: 2, description: "Soup that is soupy", picture: File.open("#{Rails.root}/app/assets/images/soup.jpg"))
 
 c1 = p1.comments.create!(content: "Great deal!", owner_id: u2.id)
 c2 = p1.comments.create!(content: "Nice job!", owner_id: u3.id)

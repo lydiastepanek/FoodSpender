@@ -377,7 +377,7 @@ header {
   padding: 10px;
 }
 
-.content-main a, h1, #delete-post {
+.content-main a, h1 {
   display: block;
   margin: 5px;
 }
@@ -516,6 +516,7 @@ header {
 
 .sign-in input[type="text"], input[type="password"] {
   border: 1px solid #aaa;
+  padding: 2px;
 }
 
 .guest-account {
