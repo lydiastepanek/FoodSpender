@@ -21,6 +21,7 @@ LsFinalproject.Views.Search = Backbone.View.extend({
 		var content = this.template({
 			results: this.searchResults
 		});
+		this.$el.find(".search-results").addClass("is-open")
 		this.$el.find(".search-results").html(content);
 
 		return this;
