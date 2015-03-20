@@ -9,7 +9,7 @@ LsFinalproject.Views.PostsIndex = Backbone.View.extend({
     event.preventDefault();
     var post = new LsFinalproject.Models.Post;
     var newView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: post})
-    console.log(newView.render().$el)
+    // console.log(newView.render().$el)
     $("body").append(newView.render().$el)
     $("body").find(".modal").addClass("is-open");
   },

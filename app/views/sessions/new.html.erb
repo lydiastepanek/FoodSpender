@@ -1,5 +1,15 @@
 <section class="content">
 
+  <form class="guest-account" action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <input type="hidden" name="user[email]" value="lydia.stepanek@gmail.com">
+    <input type="hidden" name="user[password]" value="lydialydia">
+
+    <button>Visit as Guest User</button>
+
+  </form>
+
   <ul class="sign-in">
 
     <h1>Sign In</h1>
@@ -25,9 +35,6 @@
         Don't have an account? <a href="/users/new">Sign up.</a>
 
       </form>
-
-      <%= button_to('Sign in with Guest Account', session_url,
-          method: "post", remote: true, data: { user: {email: 'lydia.stepanek@gmail.com', password: 'lydialydia'} }) %>
 
   </ul>
 

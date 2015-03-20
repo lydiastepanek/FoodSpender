@@ -1,15 +1,10 @@
 <h1>Search!</h1>
 
-<!-- <label>
-	Query
-	<input type="text" class="query">
-</label> -->
-
 <section class="results">
 
 	<nav>
-		Displaying page number <%= results.pageNum %> out
-		of <%= results.total_count %> results
+		<!-- Displaying page number <%= results.pageNum %> out
+		of <%= results.total_count %> results -->
 		<a class="prev-page" href="javascript:void(0)">Prev</a>
 		<a class="next-page" href="javascript:void(0)">Next</a>
 	</nav>
@@ -18,19 +13,22 @@
 		<article>
 			<% if (result instanceof LsFinalproject.Models.User) { %>
 
-				<%='User: ' + result.escape("first_name") + ' ' + result.escape("last_name") %>
+				<%=result.escape("first_name") + ' ' + result.escape("last_name") %>
+				<a href="#posts/users/<%= result.escape('id')%>">Go to user's page →</a>
 
 			<% }%>
 
 			<% if (result instanceof LsFinalproject.Models.Post) { %>
 
-				<%='Post: ' + result.escape("description") %>
+				<%=result.escape("description") %>
+				<a href="#posts/users/<%= result.escape('owner_id')%>">Go to page with this post →</a>
 
 			<% }%>
 
 			<% if (result instanceof LsFinalproject.Models.Comment) { %>
 
-				<%='Comment: ' + result.escape("content") %>
+				<%=result.escape("content") %>
+				<a href="#posts/users/<%= result.escape('post_owner_id')%>">Go to page with this comment →</a>
 
 			<% }%>
 

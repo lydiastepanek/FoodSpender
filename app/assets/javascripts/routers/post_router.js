@@ -2,17 +2,12 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
 
   initialize: function(options) {
     this.$rootEl= options.$rootEl;
+    var searchView = new LsFinalproject.Views.Search({el: $(".header")})
   },
 
   routes: {
     '': 'index',
-    'posts/users/:id': 'userShow',
-    'search': 'search'
-  },
-
-  search: function () {
-    var searchView = new LsFinalproject.Views.Search({el: $(".header")})
-    this.switchView(searchView)
+    'posts/users/:id': 'userShow'
   },
 
   index: function () {
