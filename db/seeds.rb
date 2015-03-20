@@ -20,11 +20,11 @@ Comment.delete_all
 Like.delete_all
 Friendship.delete_all
 
-u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/valerie.jpg"))
-u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/james.jpeg"))
-u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/bret.jpeg"))
-u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/claire.jpg"))
-u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/lydia.jpg"))
+u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", picture: File.open("#{Rails.root}/app/assets/images/valerie.jpg"))
+u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/james.jpeg"))
+u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/bret.jpeg"))
+u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/claire.jpg"))
+u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/lydia.jpg"))
 
 f1 = Foodtype.create!(title: 'Afghan')
 f2 = Foodtype.create!(title: 'African')
