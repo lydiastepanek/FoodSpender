@@ -151,7 +151,9 @@ header {
 /* --- CONTENT --- */
 
 body {
-  background: #eee;
+  /*background-color: #eee;*/
+  background-image: url("the-seduction-green-apples.jpg");
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .content {
@@ -209,8 +211,9 @@ body {
 .thumb > img {
   border: 1px solid #000;
   width: 58px;
-  height: auto;
+  height: 58px;
   border-radius: 5px 5px;
+  object-fit: cover;
 }
 
 .thumb {
@@ -304,9 +307,10 @@ body {
   margin: 50px 0px 10px 0px;
   border: 1px solid #000;
   width: 58px;
-  height: auto;
+  height: 58px;
   border-radius: 5px 5px;
   display: block;
+  object-fit: cover;
 }
 
 .content-main .likes {
@@ -329,7 +333,7 @@ body {
 }
 
 .content-main .post-main {
-  border: 3px solid #000;
+  border: 1px solid #000;
   background: #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -359,7 +363,7 @@ body {
 }
 
 .content-main .comments {
-  border: 3px solid #000;
+  border: 1px solid #000;
   float: right;
   margin: -20px -40px 0px 0px;
   width: 390px;
@@ -398,7 +402,7 @@ body {
 
 .modal-screen {
   position: fixed;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
   bottom: 0;
   left: 0;
@@ -417,6 +421,7 @@ body {
   z-index: 3;
   border-radius: 5px;
   border: 1px solid #000;
+  background: #eee;
 }
 
 .modal-close {
@@ -434,19 +439,49 @@ body {
 
 .modal-form > h1 {
   font-size: 36px;
-  line-height: 1;
-  font-weight: 300;
 }
 
 .modal-form > p {
   margin: 0 0 20px 0;
 }
 
+.modal-form li {
+  list-style: none;
+  padding: 5px;
+}
+
+.modal-form input[type="text"], input[type="password"], input[type="option"], input[type="decimal"], input[type="number"] {
+  border: 1px solid #aaa;
+  background: #fff;
+  padding: 4px;
+}
+
+.modal-form input[type="number"] {
+  width: 50px;
+}
+
+/* --- SIGN IN/ LOG IN --- */
+
+.sign-in {
+  height: 500px;
+  border-bottom: 1px solid #aaa;
+  padding: 20px;
+}
+
+.sign-in h1 {
+  font-size: 36px;
+}
+
+.sign-in li {
+  padding: 5px;
+}
+
+.sign-in input[type="text"], input[type="password"] {
+  border: 1px solid #aaa;
+}
 
 
-
-
-
+/*modal-form*/
 
 
 /**/

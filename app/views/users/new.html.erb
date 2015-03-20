@@ -1,29 +1,38 @@
 <section class="content">
 
-  <ul class="content-main group">
-    <h1 class="content-header">Sign Up</h1>
+  <ul class="sign-in">
+    <h1>Sign Up</h1>
       <%= flash[:errors] %>
-      
+
         <form action="/users" method="post" enctype="multipart/form-data">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
+          <li>
+            <label for="email">Email</label>
+            <input id="email" type="text" name="user[email]">
+          </li>
 
-          <label for="email">Email</label>
-          <input id="email" type="text" name="user[email]">
+          <li>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="user[password]">
+            <br>
+          </li>
 
-          <label for="password">Password</label>
-          <input id="password" type="password" name="user[password]">
-          <br>
+          <li>
+            <label for="firstname">First Name</label>
+            <input id="firstname" type="text" name="user[first_name]">
+          </li>
 
-          <label for="firstname">First Name</label>
-          <input id="firstname" type="text" name="user[first_name]">
+          <li>
+            <label for="lastname">Last Name</label>
+            <input id="lastname" type="text" name="user[last_name]">
+            <br>
+          </li>
 
-          <label for="lastname">Last Name</label>
-          <input id="lastname" type="text" name="user[last_name]">
-          <br>
-
-          <label for="picture">Picture</label>
-          <input id="picture" type="file" name="user[picture]">
+          <li>
+            <label for="picture">Picture</label>
+            <input id="picture" type="file" name="user[picture]">
+          </li>
 
           <br>
           <button>Submit</button>

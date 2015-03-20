@@ -29,6 +29,10 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 
 gem 'backbone-on-rails'
 
+gem "pg_search"
+
+gem 'kaminari'
+
 gem "paperclip", "~> 4.2"
 gem "aws-sdk", '< 2.0'
 gem "figaro"

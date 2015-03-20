@@ -1,19 +1,23 @@
 <section class="content">
 
-  <ul class="content-main group">
-    <%= flash[:errors] %>
+  <ul class="sign-in">
 
-    <h1 class="content-header">Sign In</h1>
+    <h1>Sign In</h1>
 
       <form action="/session" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-        <label for="email">Email</label>
-        <input id="email" type="text" name="user[email]">
+        <li>
+          <label for="email">Email</label>
+          <input id="email" type="text" name="user[email]">
+        </li>
 
-        <label for="password">Password</label>
-        <input id="password" type="password" name="user[password]">
+        <li>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="user[password]">
+        </li>
 
+        <%= flash[:errors] %>
         <button>Submit</button>
 
         <br>
@@ -21,6 +25,9 @@
         Don't have an account? <a href="/users/new">Sign up.</a>
 
       </form>
+
+      <%= button_to('Sign in with Guest Account', session_url,
+          method: "post", remote: true, data: { user: {email: 'lydia.stepanek@gmail.com', password: 'lydialydia'} }) %>
 
   </ul>
 

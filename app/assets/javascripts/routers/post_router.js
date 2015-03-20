@@ -6,21 +6,13 @@ LsFinalproject.Routers.PostRouter = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'posts/new': 'newPost',
-    'posts/:id/edit': 'editPost',
-    'posts/users/:id': 'userShow'
+    'posts/users/:id': 'userShow',
+    'search': 'search'
   },
 
-  editPost: function (id) {
-    var post = LsFinalproject.posts.getOrFetch(id)
-    var newView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: post})
-    this.switchView(newView)
-  },
-
-  newPost: function () {
-    var post = new LsFinalproject.Models.Post;
-    var newView = new LsFinalproject.Views.PostForm({collection: LsFinalproject.posts, model: post})
-    this.switchView(newView)
+  search: function () {
+    var searchView = new LsFinalproject.Views.Search({el: $(".header")})
+    this.switchView(searchView)
   },
 
   index: function () {

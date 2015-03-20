@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
-    render :new
+    if current_user
+      redirect_to :root
+    else
+      render :new
+    end
   end
 
   def create
@@ -13,6 +17,12 @@ class SessionsController < ApplicationController
       flash.now[:errors] = ["Invalid email and/or password"]
       render :new
     end
+  end
+
+  def guest_account
+    @user = User.find_by_credentials('lydia.stepanek@gmail.com','lydialydia')
+    sign_in!(@user)
+    redirect_to :root
   end
 
   def destroy

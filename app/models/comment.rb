@@ -1,6 +1,9 @@
 class Comment < ActiveRecord::Base
   validates :post_id, :content, :owner_id, presence: true
 
+  include PgSearch
+  multisearchable against: :content
+
   belongs_to(
     :post,
     class_name: "Post",

@@ -1,0 +1,28 @@
+<header class="header">
+
+  <nav class="header-nav group">
+    <h3>FoodSpender</h3>
+
+    <ul>
+      <li>
+        Search <input type="text" value="">
+      </li>
+
+      <li>
+
+        <% if(LsFinalproject.currentUser.isSignedIn()) { %>
+
+          <p>
+            Signed in as:
+            <a href="#users/<%= LsFinalproject.currentUser.id %>"><%= LsFinalproject.currentUser.escape("first_name") %></a> |
+            <a href="session/new" id="sign-out-link">Sign Out</a>
+          </p>
+
+        <% } %>
+
+      </li>
+    </ul>
+
+  </nav>
+
+</header>

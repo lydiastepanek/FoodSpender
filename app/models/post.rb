@@ -5,6 +5,9 @@ class Post < ActiveRecord::Base
   has_attached_file :picture, default_url: "food.jpeg", :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
+  include PgSearch
+  multisearchable against: :description
+
   belongs_to(
     :author,
     class_name: "User",

@@ -9,7 +9,12 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
   events: {
     'submit': 'createPost',
     'click .score': 'saveScore',
-		"change #input-picture-file": "changePicture"
+		"change #input-picture-file": "changePicture",
+    "click .modal-close": 'closeForm'
+  },
+
+  closeForm: function () {
+    $("body").find(".modal").removeClass("is-open");
   },
 
   saveScore: function(event) {

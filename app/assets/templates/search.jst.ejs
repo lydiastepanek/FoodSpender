@@ -1,0 +1,51 @@
+<h1>Search!</h1>
+
+<!-- <label>
+	Query
+	<input type="text" class="query">
+</label> -->
+
+<section class="results">
+
+	<nav>
+		Displaying page number <%= results.pageNum %> out
+		of <%= results.total_count %> results
+		<a class="prev-page" href="javascript:void(0)">Prev</a>
+		<a class="next-page" href="javascript:void(0)">Next</a>
+	</nav>
+
+	<% results.each(function (result) { %>
+		<article>
+			<% if (result instanceof LsFinalproject.Models.User) { %>
+
+				<%='User: ' + result.escape("first_name") + ' ' + result.escape("last_name") %>
+
+			<% }%>
+
+			<% if (result instanceof LsFinalproject.Models.Post) { %>
+
+				<%='Post: ' + result.escape("description") %>
+
+			<% }%>
+
+			<% if (result instanceof LsFinalproject.Models.Comment) { %>
+
+				<%='Comment: ' + result.escape("content") %>
+
+			<% }%>
+
+		</article>
+	<% }) %>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!--  -->

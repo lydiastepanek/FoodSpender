@@ -20,11 +20,11 @@ Comment.delete_all
 Like.delete_all
 Friendship.delete_all
 
-u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen")
-u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek")
-u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek")
-u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek")
-u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek")
+u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/valerie.jpg"))
+u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/james.jpeg"))
+u3 = User.create!(email: "bret.stepanek@gmail.com", password: "bretbret", first_name: "Bret", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/bret.jpeg"))
+u4 = User.create!(email: "claire.stepanek@gmail.com", password: "claireclaire", first_name: "Claire", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/claire.jpg"))
+u5 = User.create!(email: "lydia.stepanek@gmail.com", password: "lydialydia", first_name: "Lydia", last_name: "Stepanek", picture: File.open("/Users/appacademy/desktop/foodspender/app/assets/images/lydia.jpg"))
 
 f1 = Foodtype.create!(title: 'Afghan')
 f2 = Foodtype.create!(title: 'African')
@@ -137,28 +137,73 @@ f108 = Foodtype.create!(title: 'Wine')
 f109 = Foodtype.create!(title: 'Beer')
 f110 = Foodtype.create!(title: 'Spirits')
 
-p1 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 15, description: "Groceries Day1")
-p2 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 16, description: "Groceries Day2")
-p3 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 17, description: "Groceries Day3")
-p4 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 18, description: "Groceries Day4")
+p1 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 15, description: "Groceries Monday")
+p2 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 16, description: "Groceries Tuesday")
+p3 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 17, description: "Groceries Friday")
+p4 = u1.posts.create!(food_id: f107.id, location: 'Big Y', score_id: 4, price: 314.25, num_meals: 18, description: "Groceries Sunday")
 
-p5 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine Day1")
-p6 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine Day2")
-p7 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 120.90, num_meals: 1, description: "Wine Day3")
+p5 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine for St. Patty's")
+p6 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine because UGH")
+p7 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 120.90, num_meals: 1, description: "Wine cooler Wednesday")
 p8 = u2.posts.create!(food_id: f108.id, location: 'Wine Store', score_id: 4, price: 20.10, num_meals: 1, description: "Wine Day4")
 
-p9 = u5.posts.create!(food_id: f77.id, location: "Carmine's", score_id: 4, price: 4, num_meals: 1, description: "Pizza Day1")
-p10 = u5.posts.create!(food_id: f69.id, location: 'Taco Bell', score_id: 4, price: 7, num_meals: 1, description: "Taco Day2")
-p11 = u5.posts.create!(food_id: f57.id, location: 'Hampton Dosa', score_id: 4, price: 11, num_meals: 1, description: "Dosa Day3")
-p12 = u5.posts.create!(food_id: f57.id, location: 'Indian Palace', score_id: 4, price: 20.10, num_meals: 1, description: "Indian Day4")
+p9 = u5.posts.create!(food_id: f77.id, location: "Carmine's", score_id: 4, price: 4, num_meals: 1, description: "Pizza for breakfast")
+p10 = u5.posts.create!(food_id: f69.id, location: 'Taco Bell', score_id: 4, price: 7, num_meals: 1, description: "Tacos Mmmmmmm")
+p11 = u5.posts.create!(food_id: f57.id, location: 'Hampton Dosa', score_id: 4, price: 11, num_meals: 1, description: "Dosa Today!")
+p12 = u5.posts.create!(food_id: f57.id, location: 'Indian Palace', score_id: 4, price: 20.10, num_meals: 1, description: "Indian Lunch")
 
-c1 = p1.comments.create!(content: "Great deal on day 1!", owner_id: u2.id)
+p13 = u3.posts.create!(food_id: f97.id, location: 'Barcelona', score_id: 5, price: 60.10, num_meals: 1, description: "Top-notch Tapas")
+
+p14 = u4.posts.create!(food_id: f90.id, location: 'Soup Heaven', score_id: 1, price: 2, num_meals: 2, description: "Soup that is soupy")
+
+c1 = p1.comments.create!(content: "Great deal!", owner_id: u2.id)
 c2 = p1.comments.create!(content: "Nice job!", owner_id: u3.id)
 c3 = p1.comments.create!(content: "Wow!", owner_id: u4.id)
+c4 = p1.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
+
+c5 = p2.comments.create!(content: "Great deal!", owner_id: u2.id)
+c6 = p2.comments.create!(content: "Nice job!", owner_id: u3.id)
+c7 = p2.comments.create!(content: "Wow!", owner_id: u4.id)
+c8 = p2.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
+
+c9 = p3.comments.create!(content: "Great deal!", owner_id: u2.id)
+c10 = p3.comments.create!(content: "Nice job!", owner_id: u3.id)
+c11 = p3.comments.create!(content: "Wow!", owner_id: u4.id)
+c12 = p3.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
+
+c13 = p4.comments.create!(content: "Great deal!", owner_id: u2.id)
+c14 = p4.comments.create!(content: "Nice job!", owner_id: u3.id)
+c15 = p4.comments.create!(content: "Wow!", owner_id: u4.id)
+c16 = p4.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
+
+c17 = p5.comments.create!(content: "Great deal!", owner_id: u2.id)
+c18 = p5.comments.create!(content: "Nice job!", owner_id: u3.id)
+c19 = p5.comments.create!(content: "Wow!", owner_id: u4.id)
+c20 = p5.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
+
+c21 = p6.comments.create!(content: "Great deal!", owner_id: u2.id)
+c22 = p6.comments.create!(content: "Nice job!", owner_id: u3.id)
+c23 = p6.comments.create!(content: "Wow!", owner_id: u4.id)
+c24 = p6.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
 
 l1 = p1.likes.create!(owner_id: u2.id)
 l2 = p1.likes.create!(owner_id: u3.id)
 l3 = p1.likes.create!(owner_id: u4.id)
+
+l4 = p5.likes.create!(owner_id: u2.id)
+l5 = p5.likes.create!(owner_id: u3.id)
+l6 = p5.likes.create!(owner_id: u4.id)
+
+l7 = p9.likes.create!(owner_id: u2.id)
+l8 = p9.likes.create!(owner_id: u3.id)
+l9 = p9.likes.create!(owner_id: u4.id)
+
+l10 = p6.likes.create!(owner_id: u2.id)
+l11 = p6.likes.create!(owner_id: u3.id)
+l12 = p6.likes.create!(owner_id: u4.id)
+
+l13 = p2.likes.create!(owner_id: u2.id)
+l14 = p2.likes.create!(owner_id: u3.id)
 
 u1.friendships.create!(friend_id: u2.id)
 u1.friendships.create!(friend_id: u3.id)
@@ -166,12 +211,6 @@ u1.friendships.create!(friend_id: u4.id)
 u1.friendships.create!(friend_id: u5.id)
 u2.friendships.create!(friend_id: u4.id)
 u2.friendships.create!(friend_id: u5.id)
-
-r1 = Rating.create!(post_id: p1.id, user_id: u1.id, score: 4)
-r2 = Rating.create!(post_id: p2.id, user_id: u1.id, score: 4)
-r3 = Rating.create!(post_id: p3.id, user_id: u1.id, score: 4)
-r4 = Rating.create!(post_id: p4.id, user_id: u1.id, score: 4)
-
 
 
 

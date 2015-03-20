@@ -5,7 +5,7 @@ LsFinalproject.Collections.Posts = Backbone.Collection.extend({
   model: LsFinalproject.Models.Post,
 
   comparator: function(post) {
-    return post.get('created_at');
+    return -post.id;
   },
 
   getOrFetch: function(id) {

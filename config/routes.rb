@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :friendships, only: [:create]
     delete 'friendships', :to => 'friendships#destroy'
+    get "/search", to: "static_pages#search"
   end
   resources :users, only: [:new, :create, :index, :show] do
     resources :friendships, only: [:create, :destroy]

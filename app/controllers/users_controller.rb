@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    render :new
+    if current_user
+      redirect_to :root
+    else
+      render :new
+    end
   end
 
   def create
