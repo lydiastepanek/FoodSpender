@@ -76,6 +76,7 @@ body {
   line-height: 1.2;
   /*background-color: #eee;*/
   background-image: url("the-seduction-green-apples3.jpg");
+  /*background-image: url("#{Rails.root}/app/assets/images/the-seduction-green-apples3.jpg");*/
   background-size: 100%;
   width: 100%;
   height: 100%;
