@@ -22,7 +22,7 @@ LsFinalproject.Views.PostForm = Backbone.View.extend({
     this.model.set('score_id', $(event.currentTarget).data("id"))
     var numStars = $(event.currentTarget).data("id");
     for (var i = numStars; i > 0; i--) {
-      $(".rating").find('[data-id="' + i + '"]').replaceWith("★")
+      $(".rating").find('[data-id="' + i + '"] .fa').replaceWith('<i class="fa fa-star fa-fw"></i>')
     }
   },
 

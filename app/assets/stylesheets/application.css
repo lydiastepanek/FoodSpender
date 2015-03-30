@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 /* --- RESET --- */
@@ -92,6 +93,12 @@ body {
 
 /* 'star-rating' component */
 
+/* on form */
+
+.fa-star, .fa-star-o {
+  /*color: #C98B00;*/
+}
+
 .rating {
  unicode-bidi: bidi-override;
  direction: rtl;
@@ -106,9 +113,26 @@ body {
 
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
-  content: "\2605";
+  display: inline-block;
   position: absolute;
+  font-family: FontAwesome;
+  font-size: 15px;
+  content: "\f006";
+  width: 1.1em;
+  background: #eee;
+  z-index: 6;
 }
+
+/*.rating > span:hover:after,
+.rating > span:hover ~ span:after {
+  display: inline-block;
+  position: absolute;
+  font-family: FontAwesome;
+  font-size: 15px;
+  content: "\f006";
+  width: 1.1em;
+}*/
+
 
 /* --- HEADER --- */
 

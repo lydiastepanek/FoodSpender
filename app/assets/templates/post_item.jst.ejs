@@ -35,7 +35,35 @@
       </section>
 
       <ul>
-      <li>Score: <%= post.escape('score_id') %></li>
+
+      <li id="item_score_id">Score:
+          <% if (post.escape('score_id') >= 1) { %>
+            <i class="fa fa-star"></i>
+          <% } else { %>
+            <i class="fa fa-star-o"></i>
+          <% }; %>
+          <% if (post.escape('score_id') >= 2) { %>
+            <i class="fa fa-star"></i>
+          <% } else { %>
+            <i class="fa fa-star-o"></i>
+          <% }; %>
+          <% if (post.escape('score_id') >= 3) { %>
+            <i class="fa fa-star"></i>
+          <% } else { %>
+            <i class="fa fa-star-o"></i>
+          <% }; %>
+          <% if (post.escape('score_id') >= 4) { %>
+            <i class="fa fa-star"></i>
+          <% } else { %>
+            <i class="fa fa-star-o"></i>
+          <% }; %>
+          <% if (post.escape('score_id') >= 5) { %>
+            <i class="fa fa-star"></i>
+          <% } else { %>
+            <i class="fa fa-star-o"></i>
+          <% }; %>
+      </li>
+
       <li>Food Category: <%= post.get('food_type').title %></li>
       <li>Location: <%= post.escape('location') %></li>
       <li>Price: $<%= post.escape('price') %></li>
