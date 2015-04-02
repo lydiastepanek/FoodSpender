@@ -19,22 +19,23 @@
 
     <div class="post-main group">
 
-      <% if (post.get("owner_id") === LsFinalproject.currentUser.id) { %>
-        <button id="delete-post" name="button">Delete Post</button><br>
-        <button id="edit-post" name="button">Edit Post</button><br>
-      <% } %>
-
       <h1>
         <%= post.escape('description') %>
       </h1>
 
-      <section id="post-image">
+      <div id="post-image">
 
         <img src="<%= post.escape('picture_url') %>"/>
 
-      </section>
+      </div>
 
       <ul>
+
+        <% if (post.get("owner_id") === LsFinalproject.currentUser.id) { %>
+          <li>
+            <a href="#" id="delete-post">Delete Post</a> | <a href="#" id="edit-post">Edit Post</a>
+          </li>
+        <% } %>
 
       <li id="item_score_id">Score:
           <% if (post.escape('score_id') >= 1) { %>

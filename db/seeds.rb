@@ -157,6 +157,11 @@ p13 = u3.posts.create!(food_id: f97.id, location: 'Barcelona', score_id: 5, pric
 
 p14 = u4.posts.create!(food_id: f90.id, location: 'Soup Heaven', score_id: 1, price: 2, num_meals: 2, description: "Soup that is soupy", picture: File.open("#{Rails.root}/app/assets/images/soup.jpg"))
 
+p15 = u0.posts.create!(food_id: f106.id, location: 'Saigon Cafe', score_id: 5, price: 12, num_meals: 1, description: "Discovered great Vietnamese place in WBurg", picture: File.open("#{Rails.root}/app/assets/images/vietnamese.jpg"))
+p16 = u0.posts.create!(food_id: f43.id, location: 'Pentagon City Mall', score_id: 3, price: 6, num_meals: 1, description: "Decent mall food", picture: File.open("#{Rails.root}/app/assets/images/fastfood.jpg"))
+p17 = u0.posts.create!(food_id: f72.id, location: 'Saigon Cafe', score_id: 3, price: 9, num_meals: 1, description: "Underrated Mongolian Barbecue", picture: File.open("#{Rails.root}/app/assets/images/bbq.jpg"))
+
+
 c1 = p1.comments.create!(content: "Great deal!", owner_id: u2.id)
 c2 = p1.comments.create!(content: "Nice job!", owner_id: u3.id)
 c3 = p1.comments.create!(content: "Wow!", owner_id: u4.id)
@@ -168,23 +173,35 @@ c7 = p2.comments.create!(content: "Wow!", owner_id: u4.id)
 c8 = p2.comments.create!(content: "Wow that is a great deal!", owner_id: u5.id)
 
 c9 = p3.comments.create!(content: "Ambitious!", owner_id: u2.id)
-c10 = p3.comments.create!(content: "Inspiring!", owner_id: u3.id)
-c11 = p3.comments.create!(content: "Compelling!", owner_id: u4.id)
-c12 = p3.comments.create!(content: "Marvelous!", owner_id: u5.id)
+c10 = p3.comments.create!(content: "Inspiring meal choice!", owner_id: u3.id)
+c11 = p3.comments.create!(content: "Compelling title!", owner_id: u4.id)
+c12 = p3.comments.create!(content: "Marvelous picture!", owner_id: u5.id)
 
-c13 = p4.comments.create!(content: "Outstanding!", owner_id: u2.id)
-c14 = p4.comments.create!(content: "Dedicated!", owner_id: u3.id)
+c13 = p4.comments.create!(content: "Looks outstanding!", owner_id: u2.id)
+c14 = p4.comments.create!(content: "Nice!", owner_id: u3.id)
 c15 = p4.comments.create!(content: "Gutsy!", owner_id: u4.id)
 c16 = p4.comments.create!(content: "Pretty good!", owner_id: u5.id)
 
-c17 = p5.comments.create!(content: "Notable!", owner_id: u2.id)
+c17 = p5.comments.create!(content: "Notable find in that neighborhood!", owner_id: u2.id)
 c18 = p5.comments.create!(content: "Enterprising!", owner_id: u3.id)
 c19 = p5.comments.create!(content: "Phenomenal!", owner_id: u4.id)
 c20 = p5.comments.create!(content: "Compelling", owner_id: u5.id)
 
 c21 = p6.comments.create!(content: "Grand", owner_id: u2.id)
 c22 = p6.comments.create!(content: "No this place is top-notch!", owner_id: u3.id)
-c23 = p6.comments.create!(content: "Wow you love this wine store!!", owner_id: u4.id)
+c23 = p6.comments.create!(content: "Compelling title!", owner_id: u4.id)
+
+c24 = p15.comments.create!(content: "Great post!", owner_id: u2.id)
+c25 = p15.comments.create!(content: "Notable find in that neighborhood!", owner_id: u3.id)
+c26 = p15.comments.create!(content: "Phenomenal!", owner_id: u4.id)
+
+c27 = p16.comments.create!(content: "Marvelous picture!", owner_id: u2.id)
+c28 = p16.comments.create!(content: "This place is top-notch!", owner_id: u3.id)
+c29 = p16.comments.create!(content: "Compelling title!", owner_id: u4.id)
+
+c30 = p17.comments.create!(content: "Wow!", owner_id: u2.id)
+c31 = p17.comments.create!(content: "Now I want to go there!", owner_id: u3.id)
+c32 = p17.comments.create!(content: "Nice!", owner_id: u4.id)
 
 l1 = p1.likes.create!(owner_id: u2.id)
 l2 = p1.likes.create!(owner_id: u3.id)
@@ -201,6 +218,19 @@ l9 = p9.likes.create!(owner_id: u4.id)
 l10 = p6.likes.create!(owner_id: u2.id)
 l11 = p6.likes.create!(owner_id: u3.id)
 l12 = p6.likes.create!(owner_id: u4.id)
+
+l13 = p15.likes.create!(owner_id: u2.id)
+l14 = p15.likes.create!(owner_id: u3.id)
+l15 = p15.likes.create!(owner_id: u4.id)
+
+l16 = p16.likes.create!(owner_id: u2.id)
+l17 = p16.likes.create!(owner_id: u3.id)
+l18 = p16.likes.create!(owner_id: u4.id)
+l22 = p16.likes.create!(owner_id: u1.id)
+
+l19 = p17.likes.create!(owner_id: u2.id)
+l20 = p17.likes.create!(owner_id: u3.id)
+l21 = p17.likes.create!(owner_id: u4.id)
 
 l13 = p2.likes.create!(owner_id: u2.id)
 l14 = p2.likes.create!(owner_id: u3.id)

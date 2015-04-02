@@ -117,22 +117,11 @@ body {
   position: absolute;
   font-family: FontAwesome;
   font-size: 15px;
-  content: "\f006";
+  content: "\f005";
   width: 1.1em;
   background: #eee;
-  z-index: 6;
+  z-index: 5;
 }
-
-/*.rating > span:hover:after,
-.rating > span:hover ~ span:after {
-  display: inline-block;
-  position: absolute;
-  font-family: FontAwesome;
-  font-size: 15px;
-  content: "\f006";
-  width: 1.1em;
-}*/
-
 
 /* --- HEADER --- */
 
@@ -331,24 +320,40 @@ header {
   /*background: red;*/
 }
 
-.content-main {
+.content-main-header {
+  width: 500px;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+  margin: 0 0 20px 0;
 }
 
-.content-main h1 {
+.content-main-header > h1 {
   font-size: 36px;
   text-align: left;
   float: left;
 }
 
+.content-main-header ul {
+  float: right;
+}
+
+.content-main-header a {
+  /*background: #eee;*/
+  padding: 5px;
+  margin: 2px 0;
+}
+
 #remove-friend, #add-friend{
+  border-bottom: 1px solid #aaa;
   font-size: 16px;
-  padding: 10px;
-  /*float: left;*/
-  /*background: red;*/
+  padding: 2px;
+  margin: 0;
+  width: 145px;
 }
 
 #content-main-a{
   font-size: 16px;
+  float: right;
   /*background: red;*/
 }
 
@@ -375,6 +380,10 @@ header {
   object-fit: cover;
 }
 
+.content-main #author-name {
+  width: 60px;
+}
+
 .content-main .likes {
   float: right;
   background: #098716;
@@ -391,7 +400,6 @@ header {
 .content-main .post-center {
   margin: auto;
   width: 450px;
-  /*border: 1px solid #aaa;*/
 }
 
 .content-main .post-main {
@@ -401,19 +409,28 @@ header {
   padding: 10px;
 }
 
-.content-main a, h1 {
-  display: block;
-  margin: 5px;
-}
-
 .content-main h1{
   font-weight: bold;
+  display: block;
+  margin: 4px 8px;
+  font-size: 20px;
 }
 
 .content-main #post-image {
   float: right;
+  /*overflow: auto;*/
+  margin-bottom: 10px;
+}
+
+.content-main #post-image img {
+  background-size: contain;
+  overflow: hidden;
+  display: block;
   width: 200px;
-  height: auto;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 5px 5px;
+  object-fit: cover;
 }
 
 .content-main .post-main ul {
@@ -421,7 +438,11 @@ header {
 }
 
 .content-main .post-main li {
-  margin: 2px 0px 0px 0px;
+  margin: 3px;
+}
+
+.content-main .post-main li a{
+  margin: 0;
 }
 
 .content-main .comments {
@@ -469,7 +490,7 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .modal-form {
@@ -480,7 +501,7 @@ header {
   width: 360px;
   padding: 20px;
   background: #fff;
-  z-index: 3;
+  z-index: 4;
   border-radius: 5px;
   border: 1px solid #000;
   background: #eee;

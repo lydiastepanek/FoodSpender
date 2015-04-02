@@ -30,19 +30,28 @@
 </section>
 
 <ul class="content-main group">
-  <div  class="content-header">
 
-    <h1><%= user.escape('first_name') %>'s Posts</h1>
+    <div class="content-main-header group">
 
-    <br><a href="" id="content-main-a">Back to Posts Feed</a><br>
+      <h1><%= user.escape('first_name') %>'s Posts</h1>
 
-    <% if ((user.allFriends().findWhere({id: LsFinalproject.currentUser.id}) && (user.id !== LsFinalproject.currentUser.id))) { %>
-      <button id="remove-friend" name="button">Remove Friend</button>
-    <% } else { %>
-      <button id="add-friend" name="button">Add Friend</button>
-    <% } %>
+      <ul>
 
-  </div>
+        <li>
+        <% if ((user.allFriends().findWhere({id: LsFinalproject.currentUser.id}) && (user.id !== LsFinalproject.currentUser.id))) { %>
+          <button id="remove-friend" name="button">Remove Friend</button>
+        <% } else { %>
+          <button id="add-friend" name="button">Add Friend</button>
+        <% } %>
+        </li>
+
+        <li>
+        <a href="" id="content-main-a">Back to Posts Feed</a>
+        </li>
+
+      </ul>
+
+    </div>
 
 </ul>
 
