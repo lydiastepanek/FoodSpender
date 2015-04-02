@@ -51,3 +51,10 @@ column name | data type | details
 id          | integer   | not null, primary key
 post_id     | integer   | not null, foreign key (references posts)
 owner_id    | integer   | not null, foreign key (references users)
+
+## pg_search_documents
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+srchable_id | integer   | not null, foreign key (references posts)
+srchable_tp | string    | not null
