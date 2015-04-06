@@ -331,6 +331,9 @@ header {
   font-size: 36px;
   text-align: left;
   float: left;
+  font-weight: bold;
+  display: block;
+  margin: 4px 8px;
 }
 
 .content-main-header ul {
@@ -352,12 +355,17 @@ header {
 }
 
 #content-main-a{
-  font-size: 16px;
   float: right;
-  /*background: red;*/
 }
 
 /* --- CONTENT MAIN POSTS --- */
+
+.post-main h1{
+  font-weight: bold;
+  display: block;
+  margin: 4px 8px;
+  font-size: 20px;
+}
 
 .content-main > li {
   float: left;
@@ -409,13 +417,6 @@ header {
   padding: 10px;
 }
 
-.content-main h1{
-  font-weight: bold;
-  display: block;
-  margin: 4px 8px;
-  font-size: 20px;
-}
-
 .content-main #post-image {
   float: right;
   /*overflow: auto;*/
@@ -427,7 +428,7 @@ header {
   overflow: hidden;
   display: block;
   width: 200px;
-  height: 200px;
+  height: 150px;
   border: 1px solid #000;
   border-radius: 5px 5px;
   object-fit: cover;
