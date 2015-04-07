@@ -1,6 +1,7 @@
 # FoodSpender
 
 [Heroku link] (https://foodspender.herokuapp.com)
+
 [Live link] (http://www.foodspender.us/)
 
 ## About
@@ -26,27 +27,27 @@ FoodSpender is a web app that tracks food and grocery spending and allows users 
 
 ## Interesting Features
 
-Search Capability
+**Search Capability**
 
 * pg-search multisearch enables the searching of posts, users, and comments all simultaneously using the upper right search bar
 
-File upload
+**File upload**
 
 * Paperclip, Amazon Simple Storage Service (S3), and figaro were used to allow users to upload images for their user account and also for posts
 
-Floating Form Page
+**Floating Form Page**
 
 * Advanced CSS allows user to write and edit a post while the Postsfeed is still visible
 
-bcrypt
+**bcrypt**
 
 * User passwords stored securely
 
-TDD
+**TDD**
 
 * RSpec and factory_girl tests written prior to Rails backend being built to make sure user authentication protected private information properly
 
-Font Awesome
+**Font Awesome**
 
 * Used to create 5 star rating
 
@@ -62,6 +63,6 @@ Font Awesome
 
 ## To Do
 
-Trends Page
+**Trends Page**
 
 * Data visualization to show changes in users food spending habits over time
