@@ -1,8 +1,7 @@
 # FoodSpender
 
-[Heroku link][heroku]
-
-[heroku]: https://foodspender.herokuapp.com/users/new
+[Heroku link] (https://foodspender.herokuapp.com)
+[Live link] (http://www.foodspender.us/)
 
 ## About
 FoodSpender is a web app that tracks food and grocery spending and allows users to follow and comment on their friend’s discovered deals (inspired by MyFitnessPal). It is built on Rails and Backbone. Users can:
@@ -61,7 +60,7 @@ Font Awesome
 * font-awesome
 * capybara
 
-## Bonus Features
+## To Do
 
 Trends Page
 
