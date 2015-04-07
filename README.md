@@ -27,24 +27,42 @@ FoodSpender is a web app that tracks food and grocery spending and allows users 
 
 ## Interesting Features
 
-### Search Capability
-pg-search enables the searching of posts, users, and comments
-### Floating Form Page
-CSS to allow user to write and edit post
-### File upload
-Used paperclip, figaro to allow users to upload images for their user account and also for posts
+Search Capability
+
+* pg-search multisearch enables the searching of posts, users, and comments all simultaneously using the upper right search bar
+
+File upload
+
+* Paperclip, Amazon Simple Storage Service (S3), and figaro were used to allow users to upload images for their user account and also for posts
+
+Floating Form Page
+
+* Advanced CSS allows user to write and edit a post while the Postsfeed is still visible
+
+bcrypt
+
+* User passwords stored securely
+
+TDD
+
+* RSpec and factory_girl tests written prior to Rails backend being built to make sure user authentication protected private information properly
+
+Font Awesome
+
+* Used to create 5 star rating
 
 ## Libraries Used
 
-bcrypt
-pg_search
-kaminari
-paperclip
-figaro
-font-awesome
-capybara
+* bcrypt
+* pg_search
+* kaminari
+* paperclip
+* figaro
+* font-awesome
+* capybara
 
 ## Bonus Features
 
-### Trends Page
-I want to make a separate tab away from posts that is uses data visualization to show changes in users food spending habits over time
+Trends Page
+
+* Data visualization to show changes in users food spending habits over time
