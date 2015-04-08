@@ -11,10 +11,15 @@ LsFinalproject.Views.Search = Backbone.View.extend({
 		"change .query": "search",
     "submit .query-form": "search",
 		"click .next-page": "nextPage",
-		"click .prev-page": "prevPage"
+		"click .prev-page": "prevPage",
+		"click .modal-close": 'closeForm'
 	},
 
 	template: JST.search,
+
+	closeForm: function () {
+		$("body").find(".search-results").removeClass("is-open");
+	},
 
   render: function () {
     // console.log(this.searchResults.first())

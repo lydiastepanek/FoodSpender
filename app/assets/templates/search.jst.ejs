@@ -5,9 +5,10 @@
 		<nav>
 			<!-- Displaying page number <%= results.pageNum %> out
 			of <%= results.total_count %> results -->
-			Search Results  |
-			<a class="prev-page" href="javascript:void(0)">Prev</a>
-			<a class="next-page" href="javascript:void(0)">Next</a>
+			Search Results
+			<!-- <a class="prev-page" href="javascript:void(0)">Prev</a> -->
+			<!-- <a class="next-page" href="javascript:void(0)">Next</a> -->
+			<span class="modal-close js-modal-close">&times;</span>
 		</nav>
 
 		<% results.each(function (result) { %>
@@ -45,6 +46,7 @@
 
 		<nav>
 			No Search Results
+			<span class="modal-close js-modal-close">&times;</span>
 		</nav>
 
 	</section>

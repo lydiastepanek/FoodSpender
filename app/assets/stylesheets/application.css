@@ -201,7 +201,14 @@ header {
 .header-nav .search-results article {
   border-top: 1px solid #aaa;
   padding: 5px 0px;
+}
 
+.header-nav .search-results .modal-close {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* --- CONTENT --- */
