@@ -20,6 +20,8 @@ Comment.delete_all
 Like.delete_all
 Friendship.delete_all
 
+PgSearch::Document.delete_all
+
 u0 = User.create!(email: "guest.user@example.com", password: "guestguest", first_name: "Guest", last_name: "User", picture: File.open("#{Rails.root}/app/assets/images/user_picture.png"))
 u1 = User.create!(email: "valerie.hansen@yale.edu", password: "valerievalerie", first_name: "Valerie", last_name: "Hansen", picture: File.open("#{Rails.root}/app/assets/images/valerie.jpg"))
 u2 = User.create!(email: "james.b.stepanek@gmail.com", password: "jamesjames", first_name: "James", last_name: "Stepanek", picture: File.open("#{Rails.root}/app/assets/images/james.jpeg"))

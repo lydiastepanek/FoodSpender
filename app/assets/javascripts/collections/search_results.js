@@ -1,6 +1,6 @@
 LsFinalproject.Collections.SearchResults = Backbone.Collection.extend({
 
-	url: "/api/search",
+	url: "api/search",
 
 	parse: function (resp) {
 		if (resp.total_count) {
@@ -18,7 +18,7 @@ LsFinalproject.Collections.SearchResults = Backbone.Collection.extend({
 
 		// if (type === "User") {
 		// 	return new LsFinalproject.Models.User(attrs);
-		// } else {
+		// } else if (type === "Post") {
 		// 	return new LsFinalproject.Models.Post(attrs);
 		// }
 	}
