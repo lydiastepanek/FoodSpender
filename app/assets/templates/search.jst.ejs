@@ -1,45 +1,56 @@
-<section class="results">
+<% if (results.total_count > 0) { %>
 
-	<nav>
-		<!-- Displaying page number <%= results.pageNum %> out
-		of <%= results.total_count %> results -->
-		Search Results  | 
-		<a class="prev-page" href="javascript:void(0)">Prev</a>
-		<a class="next-page" href="javascript:void(0)">Next</a>
-	</nav>
+	<section class="results">
 
-	<% results.each(function (result) { %>
-		<article>
-			<% if (result instanceof LsFinalproject.Models.User) { %>
+		<nav>
+			<!-- Displaying page number <%= results.pageNum %> out
+			of <%= results.total_count %> results -->
+			Search Results  |
+			<a class="prev-page" href="javascript:void(0)">Prev</a>
+			<a class="next-page" href="javascript:void(0)">Next</a>
+		</nav>
 
-				<%=result.escape("first_name") + ' ' + result.escape("last_name") %>
-				<a href="#posts/users/<%= result.escape('id')%>">Go to user's page →</a>
+		<% results.each(function (result) { %>
+			<article>
+				<% if (result instanceof LsFinalproject.Models.User) { %>
 
-			<% }%>
+					<%=result.escape("first_name") + ' ' + result.escape("last_name") %>
+					<a href="#posts/users/<%= result.escape('id')%>">Go to user's page →</a>
 
-			<% if (result instanceof LsFinalproject.Models.Post) { %>
+				<% }%>
 
-				<%=result.escape("description") %>
-				<a href="#posts/users/<%= result.escape('owner_id')%>">Go to page with this post →</a>
+				<% if (result instanceof LsFinalproject.Models.Post) { %>
 
-			<% }%>
+					<%=result.escape("description") %>
+					<a href="#posts/users/<%= result.escape('owner_id')%>">Go to page with this post →</a>
 
-			<% if (result instanceof LsFinalproject.Models.Comment) { %>
+				<% }%>
 
-				<%=result.escape("content") %>
-				<a href="#posts/users/<%= result.escape('post_owner_id')%>">Go to page with this comment →</a>
+				<% if (result instanceof LsFinalproject.Models.Comment) { %>
 
-			<% }%>
+					<%=result.escape("content") %>
+					<a href="#posts/users/<%= result.escape('post_owner_id')%>">Go to page with this comment →</a>
 
-		</article>
-	<% }) %>
+				<% }%>
 
-
-</section>
-
+			</article>
+		<% }) %>
 
 
+	</section>
 
+<% } else { %>
+
+	<section class="results">
+
+		<nav>
+			No Search Results
+		</nav>
+
+	</section>
+
+
+<% } %>
 
 
 
