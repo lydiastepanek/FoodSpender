@@ -1,6 +1,6 @@
-<% if (results.total_count > 0) { %>
+<section class="results">
 
-	<section class="results">
+	<% if (results.length > 0) { %>
 
 		<nav>
 			<!-- Displaying page number <%= results.pageNum %> out
@@ -15,45 +15,36 @@
 			<article>
 				<% if (result instanceof LsFinalproject.Models.User) { %>
 
-					<%=result.escape("first_name") + ' ' + result.escape("last_name") %>
-					<a href="#posts/users/<%= result.escape('id')%>">Go to user's page →</a>
+					<a href="#posts/users/<%= result.escape('id')%>"><%=result.escape("first_name") + ' ' + result.escape("last_name") %> →</a>
 
 				<% }%>
 
 				<% if (result instanceof LsFinalproject.Models.Post) { %>
 
-					<%=result.escape("description") %>
-					<a href="#posts/users/<%= result.escape('owner_id')%>">Go to page with this post →</a>
+					<a href="#posts/users/<%= result.escape('owner_id')%>"><%=result.escape("description") %> →</a>
 
 				<% }%>
 
 				<% if (result instanceof LsFinalproject.Models.Comment) { %>
 
-					<%=result.escape("content") %>
-					<a href="#posts/users/<%= result.escape('post_owner_id')%>">Go to page with this comment →</a>
+					<a href="#posts/users/<%= result.escape('post_owner_id')%>"><%=result.escape("content") %> →</a>
 
 				<% }%>
 
 			</article>
 		<% }) %>
 
-
-	</section>
-
-<% } else { %>
-
-	<section class="results">
+	<% } else { %>
 
 		<nav>
 			No Search Results
 			<span class="modal-close js-modal-close">&times;</span>
 		</nav>
 
-	</section>
 
+	<% }; %>
 
-<% } %>
-
+</section>
 
 
 

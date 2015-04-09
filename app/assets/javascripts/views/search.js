@@ -34,7 +34,7 @@ LsFinalproject.Views.Search = Backbone.View.extend({
 
   search: function (event) {
 		event.preventDefault();
-    console.log(this.$el.find(".query").val())
+    // console.log(this.$el.find(".query").val())
 		this.searchResults.pageNum = 1;
 		this.searchResults.query = this.$el.find(".query").val();
 
@@ -44,7 +44,7 @@ LsFinalproject.Views.Search = Backbone.View.extend({
 				page: 1
 			}
       , success: function () {
-        console.log(this.searchResults)
+        // console.log(this.searchResults)
       }
 		});
 	},
